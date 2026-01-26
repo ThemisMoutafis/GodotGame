@@ -10,10 +10,19 @@ config_version=5
 
 [application]
 
-config/name="HelloWorld"
-run/main_scene="uid://dxhkhibkmo7w4"
+config/name="Sewer Dweller"
+run/main_scene="uid://cmc2vopq1xwak"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
 
 [dotnet]
 

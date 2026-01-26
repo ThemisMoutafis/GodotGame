@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=3 uid="uid://cmc2vopq1xwak"]
+
+[ext_resource type="PackedScene" uid="uid://bwk6m2y1e5c8i" path="res://Entities/Player/Player.tscn" id="1_lijmk"]
+[ext_resource type="Script" uid="uid://d2ywheinskwo4" path="res://Levels/Gym.cs" id="1_rvmlp"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lijmk"]
+distance = -320.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvmlp"]
+size = Vector2(128, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6co3"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bmsn"]
+size = Vector2(96, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7toh"]
+size = Vector2(64, 64)
+
+[node name="Gym" type="Node2D"]
+script = ExtResource("1_rvmlp")
+
+[node name="Player" parent="." instance=ExtResource("1_lijmk")]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(896, 672)
+shape = SubResource("WorldBoundaryShape2D_lijmk")
+
+[node name="ColorRect" type="ColorRect" parent="Floor"]
+custom_minimum_size = Vector2(1920, 15)
+offset_top = 992.0
+offset_right = 1920.0
+offset_bottom = 1084.0
+color = Color(0, 0.22342333, 0.14221704, 1)
+
+[node name="Obstacle" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle"]
+position = Vector2(1056, 944)
+shape = SubResource("RectangleShape2D_rvmlp")
+
+[node name="ColorRect" type="ColorRect" parent="Obstacle"]
+offset_left = 992.0
+offset_top = 896.0
+offset_right = 1120.0
+offset_bottom = 992.0
+color = Color(0.38810757, 0.075988255, 0.028389635, 1)
+
+[node name="Obstacle2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle2"]
+position = Vector2(1088, 864)
+shape = SubResource("RectangleShape2D_v6co3")
+
+[node name="ColorRect" type="ColorRect" parent="Obstacle2"]
+offset_left = 1056.0
+offset_top = 832.0
+offset_right = 1120.0
+offset_bottom = 896.0
+color = Color(0.38810757, 0.075988255, 0.028389635, 1)
+
+[node name="Obstacle3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle3"]
+position = Vector2(1232, 944)
+shape = SubResource("RectangleShape2D_1bmsn")
+
+[node name="ColorRect" type="ColorRect" parent="Obstacle3"]
+offset_left = 1184.0
+offset_top = 896.0
+offset_right = 1280.0
+offset_bottom = 992.0
+color = Color(0.38810757, 0.075988255, 0.028389635, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Obstacle4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle4"]
+position = Vector2(960, 960)
+shape = SubResource("RectangleShape2D_x7toh")
+
+[node name="ColorRect" type="ColorRect" parent="Obstacle4"]
+offset_left = 928.0
+offset_top = 928.0
+offset_right = 992.0
+offset_bottom = 992.0
+color = Color(0.38810757, 0.075988255, 0.028389635, 1)
