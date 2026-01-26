@@ -1,0 +1,13 @@
+# Godot 4.x
+.godot/
+*.import
+export_presets.cfg
+
+# .NET / C# (Backend Standard)
+bin/
+obj/
+.mono/
+
+# IDE-specific (Keep the .sln and .csproj!)
+.vs/
+.vscode/
