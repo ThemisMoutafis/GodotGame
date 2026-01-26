@@ -1,7 +1,62 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwk6m2y1e5c8i"]
+[gd_scene load_steps=16 format=3 uid="uid://bwk6m2y1e5c8i"]
 
 [ext_resource type="Script" uid="uid://uhktpy1peuks" path="res://Entities/Player/Player.cs" id="1_ww0jn"]
-[ext_resource type="Texture2D" uid="uid://cg2jcjco5u17r" path="res://Assets/Player/dimi_idle_ver_1_1080-03.png" id="2_ww0jn"]
+[ext_resource type="Texture2D" uid="uid://d3qmyr1jfjxs8" path="res://Assets/Player/Idle Hero Animation/1_Dimi_idle.png" id="2_061yh"]
+[ext_resource type="Texture2D" uid="uid://cml8156vk1mab" path="res://Assets/Player/Idle Hero Animation/2_Dimi_idle-03.png" id="3_uw7o4"]
+[ext_resource type="Texture2D" uid="uid://dt1htvb1hfli0" path="res://Assets/Player/Idle Hero Animation/3_Dimi_idle.png" id="4_gallu"]
+[ext_resource type="Texture2D" uid="uid://ccl0sa4fmoerr" path="res://Assets/Player/Idle Hero Animation/4_Dimi_idle.png" id="5_samso"]
+[ext_resource type="Texture2D" uid="uid://82s33sb0kchv" path="res://Assets/Player/Idle Hero Animation/5_Dimi_idle.png" id="6_hl213"]
+[ext_resource type="Texture2D" uid="uid://xs67lkdorvki" path="res://Assets/Player/Idle Hero Animation/6_Dimi_idle.png" id="7_5m37j"]
+[ext_resource type="Texture2D" uid="uid://sstwf2u0atbg" path="res://Assets/Player/Idle Hero Animation/7_Dimi_idle.png" id="8_e34i1"]
+[ext_resource type="Texture2D" uid="uid://4g5tkdv2w3h5" path="res://Assets/Player/Idle Hero Animation/8_Dimi_idle.png" id="9_vcmon"]
+[ext_resource type="Texture2D" uid="uid://iuh0574rsxa7" path="res://Assets/Player/Idle Hero Animation/9_Dimi_idle.png" id="10_h6pxy"]
+[ext_resource type="Texture2D" uid="uid://c7gaicdalib74" path="res://Assets/Player/Idle Hero Animation/10_Dimi_idle.png" id="11_l80rc"]
+[ext_resource type="Texture2D" uid="uid://l561wr3ubha5" path="res://Assets/Player/Idle Hero Animation/11_Dimi_idle.png" id="12_l2mqv"]
+[ext_resource type="Texture2D" uid="uid://c2yi6h4vv1ip6" path="res://Assets/Player/Idle Hero Animation/12_Dimi_idle.png" id="13_mgqku"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_80tt4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_061yh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uw7o4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gallu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_samso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hl213")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5m37j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_e34i1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vcmon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_h6pxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_l80rc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_l2mqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_mgqku")
+}],
+"loop": true,
+"name": &"Idle_Animation",
+"speed": 12.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ww0jn"]
 size = Vector2(76, 127)
@@ -10,10 +65,12 @@ size = Vector2(76, 127)
 script = ExtResource("1_ww0jn")
 PlayerSprite = NodePath("Sprite2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(302, 146)
 scale = Vector2(0.11875927, 0.11962952)
-texture = ExtResource("2_ww0jn")
+sprite_frames = SubResource("SpriteFrames_80tt4")
+animation = &"Idle_Animation"
+autoplay = "Idle_Animation"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(305, 147.5)

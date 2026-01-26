@@ -3,14 +3,16 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-   [Export] public Sprite2D PlayerSprite;
+  [Export] public AnimatedSprite2D PlayerSprite;
 
     public override void _Ready()
     {
+        GD.Print(">>> PLAYER SCRIPT IS RUNNING <<<");
       if (PlayerSprite == null)
     {
         GD.PrintErr("CRITICAL: Sprite node not found! Check the name in the Scene Tree.");
     }
+    GD.Print("Available animations: ", string.Join(", ", PlayerSprite.SpriteFrames.GetAnimationNames()));
     }
     [Export] public float Speed = 300.0f;
     [Export] public float JumpVelocity = -400.0f;
@@ -67,7 +69,36 @@ public partial class Player : CharacterBody2D
             velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
         }
 
-        Velocity = velocity;
-        MoveAndSlide(); // Resolves collisions and updates is_on_floor()
+        // 4. Animation Logic with Safety Checks
+    // 4. Animation State Machine
+    if (PlayerSprite != null)
+    {
+        string nextAnim;
+
+        if (!IsOnFloor())
+        {
+            // State: AIR
+            nextAnim = PlayerSprite.SpriteFrames.HasAnimation("Jump") ? "Jump" : "Idle_Animation";
+        }
+        else if (Mathf.Abs(velocity.X) > 1.0f) // Increased threshold to 1.0 to prevent jitter
+        {
+            // State: MOVING
+            nextAnim = PlayerSprite.SpriteFrames.HasAnimation("Run") ? "Run" : "Idle_Animation";
+        }
+        else
+        {
+            // State: IDLE (The absolute fallback)
+            nextAnim = "Idle_Animation";
+        }
+
+        // Only call Play if the animation isn't already playing (prevents restarting frame 1 every frame)
+        if (PlayerSprite.Animation != nextAnim)
+        {
+            PlayerSprite.Play(nextAnim);
+        }
+    }
+
+    Velocity = velocity;
+    MoveAndSlide();
     }
 }
