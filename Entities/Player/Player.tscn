@@ -1,61 +1,113 @@
-[gd_scene load_steps=16 format=3 uid="uid://bwk6m2y1e5c8i"]
+[gd_scene load_steps=29 format=3 uid="uid://bwk6m2y1e5c8i"]
 
 [ext_resource type="Script" uid="uid://uhktpy1peuks" path="res://Entities/Player/Player.cs" id="1_ww0jn"]
-[ext_resource type="Texture2D" uid="uid://d3qmyr1jfjxs8" path="res://Assets/Player/Idle Hero Animation/1_Dimi_idle.png" id="2_061yh"]
-[ext_resource type="Texture2D" uid="uid://cml8156vk1mab" path="res://Assets/Player/Idle Hero Animation/2_Dimi_idle-03.png" id="3_uw7o4"]
-[ext_resource type="Texture2D" uid="uid://dt1htvb1hfli0" path="res://Assets/Player/Idle Hero Animation/3_Dimi_idle.png" id="4_gallu"]
-[ext_resource type="Texture2D" uid="uid://ccl0sa4fmoerr" path="res://Assets/Player/Idle Hero Animation/4_Dimi_idle.png" id="5_samso"]
-[ext_resource type="Texture2D" uid="uid://82s33sb0kchv" path="res://Assets/Player/Idle Hero Animation/5_Dimi_idle.png" id="6_hl213"]
-[ext_resource type="Texture2D" uid="uid://xs67lkdorvki" path="res://Assets/Player/Idle Hero Animation/6_Dimi_idle.png" id="7_5m37j"]
-[ext_resource type="Texture2D" uid="uid://sstwf2u0atbg" path="res://Assets/Player/Idle Hero Animation/7_Dimi_idle.png" id="8_e34i1"]
-[ext_resource type="Texture2D" uid="uid://4g5tkdv2w3h5" path="res://Assets/Player/Idle Hero Animation/8_Dimi_idle.png" id="9_vcmon"]
-[ext_resource type="Texture2D" uid="uid://iuh0574rsxa7" path="res://Assets/Player/Idle Hero Animation/9_Dimi_idle.png" id="10_h6pxy"]
-[ext_resource type="Texture2D" uid="uid://c7gaicdalib74" path="res://Assets/Player/Idle Hero Animation/10_Dimi_idle.png" id="11_l80rc"]
-[ext_resource type="Texture2D" uid="uid://l561wr3ubha5" path="res://Assets/Player/Idle Hero Animation/11_Dimi_idle.png" id="12_l2mqv"]
-[ext_resource type="Texture2D" uid="uid://c2yi6h4vv1ip6" path="res://Assets/Player/Idle Hero Animation/12_Dimi_idle.png" id="13_mgqku"]
+[ext_resource type="Texture2D" uid="uid://b7ccphrcn8gxs" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00000.png" id="2_tepoh"]
+[ext_resource type="Texture2D" uid="uid://bwtc82cpskm2u" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00001.png" id="3_h03de"]
+[ext_resource type="Texture2D" uid="uid://b3jpqeiwty1qd" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00002.png" id="4_ewrch"]
+[ext_resource type="Texture2D" uid="uid://d4lcbnbjj03r2" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00003.png" id="5_e8qxc"]
+[ext_resource type="Texture2D" uid="uid://d0m7pjfkeik8o" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00004.png" id="6_rvtm2"]
+[ext_resource type="Texture2D" uid="uid://dfadxrb1gq3he" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00005.png" id="7_o8vwu"]
+[ext_resource type="Texture2D" uid="uid://b7okqryunk5j0" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00006.png" id="8_gbla8"]
+[ext_resource type="Texture2D" uid="uid://c2ovt8otkapas" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00007.png" id="9_vi0tq"]
+[ext_resource type="Texture2D" uid="uid://b71c8h6pxmipb" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00008.png" id="10_c5u7s"]
+[ext_resource type="Texture2D" uid="uid://dk8prnfyxx6o5" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00009.png" id="11_kcvdc"]
+[ext_resource type="Texture2D" uid="uid://bq2vir0a463wt" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00010.png" id="12_ow4hj"]
+[ext_resource type="Texture2D" uid="uid://chwukfip00e6g" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00011.png" id="13_p4d7x"]
+[ext_resource type="Texture2D" uid="uid://bid1joga4mg7f" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00012.png" id="14_70klf"]
+[ext_resource type="Texture2D" uid="uid://d3ims5y5oddvw" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00013.png" id="15_hya8c"]
+[ext_resource type="Texture2D" uid="uid://bluauhol2hnj4" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00014.png" id="16_f2hyx"]
+[ext_resource type="Texture2D" uid="uid://b8mv1tmyyiwjc" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00015.png" id="17_dhm1p"]
+[ext_resource type="Texture2D" uid="uid://w1qswe8m230i" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00016.png" id="18_nfyot"]
+[ext_resource type="Texture2D" uid="uid://b637qaq8dkgwe" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00017.png" id="19_a3245"]
+[ext_resource type="Texture2D" uid="uid://dghpa883lf53d" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00018.png" id="20_knby3"]
+[ext_resource type="Texture2D" uid="uid://b2xt3s26iy1pf" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00019.png" id="21_7nwl0"]
+[ext_resource type="Texture2D" uid="uid://bs5ply7wmx4pr" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00020.png" id="22_xywnf"]
+[ext_resource type="Texture2D" uid="uid://cf03un6eyww7o" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00021.png" id="23_k7two"]
+[ext_resource type="Texture2D" uid="uid://bawt8vkb8xfod" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00022.png" id="24_t6o43"]
+[ext_resource type="Texture2D" uid="uid://b3noknv5ertdj" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00023.png" id="25_0k8yw"]
+[ext_resource type="Texture2D" uid="uid://d1n3npgmi4rf2" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00024.png" id="26_jg4gl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_80tt4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_061yh")
+"texture": ExtResource("2_tepoh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_uw7o4")
+"texture": ExtResource("3_h03de")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_gallu")
+"texture": ExtResource("4_ewrch")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_samso")
+"texture": ExtResource("5_e8qxc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_hl213")
+"texture": ExtResource("6_rvtm2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_5m37j")
+"texture": ExtResource("7_o8vwu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_e34i1")
+"texture": ExtResource("8_gbla8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_vcmon")
+"texture": ExtResource("9_vi0tq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_h6pxy")
+"texture": ExtResource("10_c5u7s")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_l80rc")
+"texture": ExtResource("11_kcvdc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_l2mqv")
+"texture": ExtResource("12_ow4hj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_mgqku")
+"texture": ExtResource("13_p4d7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_70klf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hya8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_f2hyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_dhm1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_nfyot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_a3245")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_knby3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_7nwl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_xywnf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_k7two")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_t6o43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_0k8yw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_jg4gl")
 }],
 "loop": true,
 "name": &"Idle_Animation",
-"speed": 12.0
+"speed": 15.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ww0jn"]
@@ -71,6 +123,7 @@ scale = Vector2(0.11875927, 0.11962952)
 sprite_frames = SubResource("SpriteFrames_80tt4")
 animation = &"Idle_Animation"
 autoplay = "Idle_Animation"
+frame_progress = 0.27408606
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(305, 147.5)
