@@ -8,12 +8,17 @@ public partial class Player : CharacterBody2D
     [Export] public float JumpVelocity = -400.0f;
     [Export] public float JumpCutValue = 0.5f;
     [Export] public float FallGravityMultiplier = 2.0f;
-    [Export] public float LandingThreshold = 150.0f; // Lowered slightly for better feel
+    [Export] public float LandingThreshold = 150.0f;
 
     [ExportGroup("Double Jump Settings")]
     [Export] public int MaxJumps = 2; 
     [Export] public float MaxFloatTime = 0.2f;
     [Export] public float ApexCatchThreshold = -10.0f;
+
+    [ExportGroup("Camera Juice")]
+    
+    [Export] public float DeathShakeIntensity = 8.0f;
+    [Export] public float DeathShakeDuration = 0.15f;
 
     [ExportGroup("Forgiveness")]
     [Export] public float JumpBufferTime = 0.15f;
@@ -27,7 +32,8 @@ public partial class Player : CharacterBody2D
     private float _coyoteCounter = 0; 
     private bool _wasInAir = false;
     private bool _isLanding = false;
-    private float _previousYVelocity = 0f; // Memory of the previous frame's fall speed
+    private float _previousYVelocity = 0f;
+    private bool _isDead = false;
 
     private bool _usingDoubleJumpSet = false;
     private bool _isDoubleJumpStarting = false;
@@ -35,9 +41,12 @@ public partial class Player : CharacterBody2D
     private bool _hasFloatedThisJump = false; 
     private float _floatTimer = 0f;
 
+    private Camera2D _childCamera;
     public override void _Ready()
     {
         if (PlayerSprite == null) GD.PrintErr("CRITICAL: Sprite node not found!");
+        _childCamera = GetNodeOrNull<Camera2D>("Camera2D");
+
         PlayerSprite.AnimationFinished += OnAnimationFinished;
     }
 
@@ -52,26 +61,48 @@ public partial class Player : CharacterBody2D
 
     public override void _PhysicsProcess(double delta)
     {
+        if (Input.IsKeyPressed(Key.Key1)) TriggerDeath();
+        if (Input.IsKeyPressed(Key.Key2)) TriggerRevive();
+
         Vector2 velocity = Velocity;
         float currentGravity = GetGravity().Y;
+
+        if (_isDead)
+{
+    velocity.X = 0;
+    if (!IsOnFloor()) 
+    {
+        velocity.Y += currentGravity * (float)delta;
+    }
+    else 
+    {
+        // Check the speed we HAD right before we hit the floor
+        if (_previousYVelocity > LandingThreshold) 
+        {
+            ApplyDeathShake();
+            _previousYVelocity = 0; // Reset so it only shakes once
+        }
+        velocity.Y = 0;
+    }
+
+    Velocity = velocity;
+    MoveAndSlide();
+    _previousYVelocity = velocity.Y; // Update memory for next frame
+    return; 
+}
 
         if (IsOnFloor())
         {
             if (_wasInAir)
             {
-                // Use the memory of the previous frame's velocity
                 if (_previousYVelocity > LandingThreshold)
                 {
                     _isLanding = true;
                     string landAnim = _usingDoubleJumpSet ? "DoubleJump_Land" : "Land";
-                    if (PlayerSprite.SpriteFrames.HasAnimation(landAnim))
-                    {
-                        PlayerSprite.Play(landAnim);
-                    }
+                    if (PlayerSprite.SpriteFrames.HasAnimation(landAnim)) PlayerSprite.Play(landAnim);
                 }
                 _wasInAir = false; 
             }
-
             _coyoteCounter = CoyoteTime;
             _jumpCount = 0; 
             _isDoubleJumpStarting = false;
@@ -82,7 +113,6 @@ public partial class Player : CharacterBody2D
         else
         {
             _coyoteCounter -= (float)delta;
-
             if (_jumpCount == MaxJumps && !_hasFloatedThisJump && velocity.Y >= ApexCatchThreshold)
             {
                 if (!IsOnCeiling() && !IsOnWall())
@@ -107,7 +137,6 @@ public partial class Player : CharacterBody2D
                 float finalGravity = (velocity.Y > 0) ? currentGravity * FallGravityMultiplier : currentGravity;
                 velocity.Y += finalGravity * (float)delta;
             }
-
             if (velocity.Y > LandingThreshold) _wasInAir = true;
         }
 
@@ -117,9 +146,49 @@ public partial class Player : CharacterBody2D
 
         Velocity = velocity;
         MoveAndSlide();
-
-        // Save velocity for the next frame's impact check
         _previousYVelocity = velocity.Y;
+    }
+
+    private void ApplyDeathShake()
+    {
+    // Fail-safe if the camera was never added
+    if (_childCamera == null) return;
+
+    Tween tween = GetTree().CreateTween();
+    
+    // Create a series of rapid, random shakes
+    for (int i = 0; i < 6; i++)
+    {
+        Vector2 shakeOffset = new Vector2(
+            (float)GD.RandRange(-DeathShakeIntensity, DeathShakeIntensity),
+            (float)GD.RandRange(-DeathShakeIntensity, DeathShakeIntensity)
+        );
+        
+        // Move to random offset, then back toward zero
+        tween.TweenProperty(_childCamera, "offset", shakeOffset, DeathShakeDuration / 6);
+    }
+    
+    // Ensure it ends perfectly at zero
+    tween.TweenProperty(_childCamera, "offset", Vector2.Zero, 0.05f);
+}
+
+    private void TriggerDeath()
+    {
+        if (_isDead) return;
+        _isDead = true;
+        _isApexLocked = false;
+        _isDoubleJumpStarting = false;
+        _floatTimer = 0;
+        if (PlayerSprite.SpriteFrames.HasAnimation("Death_Animation"))
+            PlayerSprite.Play("Death_Animation");
+    }
+
+    private void TriggerRevive()
+    {
+        if (!_isDead) return;
+        _isDead = false;
+        _isLanding = false;
+        PlayerSprite.Play("Idle_Animation");
     }
 
     private void HandleJumpInput(ref Vector2 velocity)
@@ -130,20 +199,14 @@ public partial class Player : CharacterBody2D
         if (_jumpBufferCounter > 0 && _coyoteCounter > 0)
         {
             velocity.Y = JumpVelocity;
-            _jumpCount = 1;
-            _jumpBufferCounter = 0;
-            _coyoteCounter = 0;
-            _usingDoubleJumpSet = false;
-            _isLanding = false;
-            _hasFloatedThisJump = false;
+            _jumpCount = 1; _jumpBufferCounter = 0; _coyoteCounter = 0;
+            _usingDoubleJumpSet = false; _isLanding = false; _hasFloatedThisJump = false;
         }
         else if (Input.IsActionJustPressed("ui_accept") && _jumpCount > 0 && _jumpCount < MaxJumps)
         {
             velocity.Y = JumpVelocity;
             _jumpCount++;
-            _usingDoubleJumpSet = true;
-            _isLanding = false;
-            _isDoubleJumpStarting = true;
+            _usingDoubleJumpSet = true; _isLanding = false; _isDoubleJumpStarting = true;
             _hasFloatedThisJump = false; 
             PlayerSprite.Play("DoubleJump_Rise");
         }
@@ -163,7 +226,7 @@ public partial class Player : CharacterBody2D
 
     private void HandleAnimations(Vector2 velocity)
     {
-        if (PlayerSprite == null) return;
+        if (PlayerSprite == null || _isDead) return; 
 
         if (IsOnFloor() || IsOnWall() || IsOnCeiling())
         {

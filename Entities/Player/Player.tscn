@@ -1,129 +1,179 @@
-[gd_scene load_steps=153 format=3 uid="uid://bwk6m2y1e5c8i"]
+[gd_scene load_steps=203 format=3 uid="uid://bwk6m2y1e5c8i"]
 
 [ext_resource type="Script" uid="uid://uhktpy1peuks" path="res://Entities/Player/Player.cs" id="1_ww0jn"]
 [ext_resource type="Texture2D" uid="uid://dvbg87ishnfa6" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00000.png" id="2_elj48"]
+[ext_resource type="Texture2D" uid="uid://okra2j0g3qwy" path="res://Assets/Player/Hero Death Animation/Dimi death_00000.png" id="2_ms043"]
 [ext_resource type="Texture2D" uid="uid://b7ccphrcn8gxs" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00000.png" id="2_tepoh"]
+[ext_resource type="Texture2D" uid="uid://dyyu6y2glua67" path="res://Assets/Player/Hero Death Animation/Dimi death_00001.png" id="3_h00i4"]
 [ext_resource type="Texture2D" uid="uid://bwtc82cpskm2u" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00001.png" id="3_h03de"]
 [ext_resource type="Texture2D" uid="uid://h4wfae68mgbm" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00001.png" id="3_yb4aq"]
 [ext_resource type="Texture2D" uid="uid://ciprld2iyk7t2" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00002.png" id="4_3dj7b"]
 [ext_resource type="Texture2D" uid="uid://b3jpqeiwty1qd" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00002.png" id="4_ewrch"]
+[ext_resource type="Texture2D" uid="uid://dfw5yvrspv0vo" path="res://Assets/Player/Hero Death Animation/Dimi death_00002.png" id="4_frfja"]
 [ext_resource type="Texture2D" uid="uid://cqvmv7wyub8ih" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00003.png" id="5_7v4tu"]
 [ext_resource type="Texture2D" uid="uid://d4lcbnbjj03r2" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00003.png" id="5_e8qxc"]
+[ext_resource type="Texture2D" uid="uid://du6nxf6pmvkyj" path="res://Assets/Player/Hero Death Animation/Dimi death_00003.png" id="5_kot2q"]
+[ext_resource type="Texture2D" uid="uid://c7xx5xgth8pwl" path="res://Assets/Player/Hero Death Animation/Dimi death_00004.png" id="6_ke1in"]
 [ext_resource type="Texture2D" uid="uid://d0m7pjfkeik8o" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00004.png" id="6_rvtm2"]
 [ext_resource type="Texture2D" uid="uid://cl2mgnwq0l642" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00004.png" id="6_taipu"]
 [ext_resource type="Texture2D" uid="uid://cpwbaqmirbnx2" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00005.png" id="7_4ipni"]
 [ext_resource type="Texture2D" uid="uid://dfadxrb1gq3he" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00005.png" id="7_o8vwu"]
+[ext_resource type="Texture2D" uid="uid://exxumv0v7yjm" path="res://Assets/Player/Hero Death Animation/Dimi death_00005.png" id="7_uopdd"]
 [ext_resource type="Texture2D" uid="uid://sdljl7itsu1j" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00006.png" id="8_4blcd"]
 [ext_resource type="Texture2D" uid="uid://b7okqryunk5j0" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00006.png" id="8_gbla8"]
+[ext_resource type="Texture2D" uid="uid://c225qwxv7jhn5" path="res://Assets/Player/Hero Death Animation/Dimi death_00006.png" id="8_lryjo"]
+[ext_resource type="Texture2D" uid="uid://cylf0ilyva7ly" path="res://Assets/Player/Hero Death Animation/Dimi death_00007.png" id="9_halid"]
 [ext_resource type="Texture2D" uid="uid://colc0kl8w4xvr" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00007.png" id="9_j7wye"]
 [ext_resource type="Texture2D" uid="uid://c2ovt8otkapas" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00007.png" id="9_vi0tq"]
 [ext_resource type="Texture2D" uid="uid://b71c8h6pxmipb" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00008.png" id="10_c5u7s"]
 [ext_resource type="Texture2D" uid="uid://ho7k7w4xy3os" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00008.png" id="10_kah1g"]
+[ext_resource type="Texture2D" uid="uid://djnkjxgechlhw" path="res://Assets/Player/Hero Death Animation/Dimi death_00008.png" id="10_xmsya"]
 [ext_resource type="Texture2D" uid="uid://dk8prnfyxx6o5" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00009.png" id="11_kcvdc"]
+[ext_resource type="Texture2D" uid="uid://cf83m3g3m2rof" path="res://Assets/Player/Hero Death Animation/Dimi death_00009.png" id="11_o0mko"]
 [ext_resource type="Texture2D" uid="uid://cmv63oilvmyn6" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00009.png" id="11_qyw8q"]
+[ext_resource type="Texture2D" uid="uid://dth2iprwkgiu8" path="res://Assets/Player/Hero Death Animation/Dimi death_00010.png" id="12_8xu0h"]
 [ext_resource type="Texture2D" uid="uid://bq2vir0a463wt" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00010.png" id="12_ow4hj"]
 [ext_resource type="Texture2D" uid="uid://dwnfrkw6f65a7" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00010.png" id="12_yn77o"]
+[ext_resource type="Texture2D" uid="uid://dwlunvpiu00ko" path="res://Assets/Player/Hero Death Animation/Dimi death_00011.png" id="13_8pvfw"]
 [ext_resource type="Texture2D" uid="uid://dcpvk8cw31y4q" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00011.png" id="13_gmciy"]
 [ext_resource type="Texture2D" uid="uid://chwukfip00e6g" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00011.png" id="13_p4d7x"]
 [ext_resource type="Texture2D" uid="uid://b2xol8lmpdnd3" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00012.png" id="14_1x22f"]
 [ext_resource type="Texture2D" uid="uid://bid1joga4mg7f" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00012.png" id="14_70klf"]
+[ext_resource type="Texture2D" uid="uid://buoh72qvq1bxx" path="res://Assets/Player/Hero Death Animation/Dimi death_00012.png" id="14_nkhot"]
 [ext_resource type="Texture2D" uid="uid://bq2qrg74lir6i" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00013.png" id="15_7gtqf"]
 [ext_resource type="Texture2D" uid="uid://d3ims5y5oddvw" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00013.png" id="15_hya8c"]
+[ext_resource type="Texture2D" uid="uid://bq600epr4wqcy" path="res://Assets/Player/Hero Death Animation/Dimi death_00013.png" id="15_xjh6b"]
+[ext_resource type="Texture2D" uid="uid://nda3kaop7l5o" path="res://Assets/Player/Hero Death Animation/Dimi death_00014.png" id="16_2uq5r"]
 [ext_resource type="Texture2D" uid="uid://bluauhol2hnj4" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00014.png" id="16_f2hyx"]
 [ext_resource type="Texture2D" uid="uid://cbvuny16igtmw" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00015.png" id="17_13lhq"]
 [ext_resource type="Texture2D" uid="uid://b8mv1tmyyiwjc" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00015.png" id="17_dhm1p"]
+[ext_resource type="Texture2D" uid="uid://bks6e2r266t24" path="res://Assets/Player/Hero Death Animation/Dimi death_00015.png" id="17_qy02k"]
 [ext_resource type="Texture2D" uid="uid://csbmg2qdwu8vu" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00016.png" id="18_0n3a8"]
 [ext_resource type="Texture2D" uid="uid://w1qswe8m230i" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00016.png" id="18_nfyot"]
+[ext_resource type="Texture2D" uid="uid://belqr2uo6t4dq" path="res://Assets/Player/Hero Death Animation/Dimi death_00016.png" id="18_qnwhx"]
 [ext_resource type="Texture2D" uid="uid://b637qaq8dkgwe" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00017.png" id="19_a3245"]
 [ext_resource type="Texture2D" uid="uid://bp6w1fxbgajfu" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00017.png" id="19_n7w0a"]
+[ext_resource type="Texture2D" uid="uid://cgalw5evs2fbs" path="res://Assets/Player/Hero Death Animation/Dimi death_00017.png" id="19_wk7ol"]
+[ext_resource type="Texture2D" uid="uid://cgebvvx2pe56m" path="res://Assets/Player/Hero Death Animation/Dimi death_00018.png" id="20_4ylx2"]
 [ext_resource type="Texture2D" uid="uid://dghpa883lf53d" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00018.png" id="20_knby3"]
 [ext_resource type="Texture2D" uid="uid://bddb15ipp3ko8" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00018.png" id="20_u6hv0"]
 [ext_resource type="Texture2D" uid="uid://b2xt3s26iy1pf" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00019.png" id="21_7nwl0"]
 [ext_resource type="Texture2D" uid="uid://df1v6sj0pfbxq" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00019.png" id="21_eejxf"]
+[ext_resource type="Texture2D" uid="uid://dn17n170cq18r" path="res://Assets/Player/Hero Death Animation/Dimi death_00019.png" id="21_r1pgb"]
+[ext_resource type="Texture2D" uid="uid://br4mf0fww5nk5" path="res://Assets/Player/Hero Death Animation/Dimi death_00020.png" id="22_874c6"]
 [ext_resource type="Texture2D" uid="uid://2gepe05xbv6o" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00020.png" id="22_qtxxj"]
 [ext_resource type="Texture2D" uid="uid://bs5ply7wmx4pr" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00020.png" id="22_xywnf"]
 [ext_resource type="Texture2D" uid="uid://1itytonajid4" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00021.png" id="23_4nnju"]
 [ext_resource type="Texture2D" uid="uid://cf03un6eyww7o" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00021.png" id="23_k7two"]
+[ext_resource type="Texture2D" uid="uid://bu0tdhqlrvvlb" path="res://Assets/Player/Hero Death Animation/Dimi death_00021.png" id="23_q2weo"]
+[ext_resource type="Texture2D" uid="uid://b4tijp5g2hqo3" path="res://Assets/Player/Hero Death Animation/Dimi death_00022.png" id="24_lat8r"]
 [ext_resource type="Texture2D" uid="uid://dc43ufcm70cp6" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00022.png" id="24_lmopn"]
 [ext_resource type="Texture2D" uid="uid://bawt8vkb8xfod" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00022.png" id="24_t6o43"]
 [ext_resource type="Texture2D" uid="uid://b3noknv5ertdj" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00023.png" id="25_0k8yw"]
 [ext_resource type="Texture2D" uid="uid://cjqpid3w6fm4d" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00023.png" id="25_hl8yl"]
+[ext_resource type="Texture2D" uid="uid://7ec5iv1aqjcv" path="res://Assets/Player/Hero Death Animation/Dimi death_00023.png" id="25_o805s"]
 [ext_resource type="Texture2D" uid="uid://dpo7xk53nr13s" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00024.png" id="26_3dd52"]
+[ext_resource type="Texture2D" uid="uid://bivm1apo4px4v" path="res://Assets/Player/Hero Death Animation/Dimi death_00024.png" id="26_gupsq"]
 [ext_resource type="Texture2D" uid="uid://d1n3npgmi4rf2" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00024.png" id="26_jg4gl"]
 [ext_resource type="Texture2D" uid="uid://bilm43p5jy4du" path="res://Assets/Player/Run Hero Animation/Asset 675_00000.png" id="27_55aqy"]
 [ext_resource type="Texture2D" uid="uid://cwt5ml7srxj3x" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00025.png" id="27_nas4s"]
+[ext_resource type="Texture2D" uid="uid://blhuluv0wclmj" path="res://Assets/Player/Hero Death Animation/Dimi death_00025.png" id="27_y2dhf"]
 [ext_resource type="Texture2D" uid="uid://can83oukg62f2" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00000.png" id="27_yt5vh"]
 [ext_resource type="Texture2D" uid="uid://m8lo21s4hy7b" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00001.png" id="28_jfyv5"]
+[ext_resource type="Texture2D" uid="uid://bhqku2b4g2vm6" path="res://Assets/Player/Hero Death Animation/Dimi death_00026.png" id="28_r3sk1"]
 [ext_resource type="Texture2D" uid="uid://2exk8qo1448c" path="res://Assets/Player/Run Hero Animation/Asset 675_00001.png" id="28_y5ktq"]
 [ext_resource type="Texture2D" uid="uid://ybmgh8tn6i8g" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00026.png" id="28_ye16m"]
 [ext_resource type="Texture2D" uid="uid://btt7n58cgwpnx" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00002.png" id="29_5hb3k"]
 [ext_resource type="Texture2D" uid="uid://c4c18qm4esfhr" path="res://Assets/Player/Run Hero Animation/Asset 675_00002.png" id="29_5sx84"]
+[ext_resource type="Texture2D" uid="uid://cjh53f1hn2qth" path="res://Assets/Player/Hero Death Animation/Dimi death_00027.png" id="29_s5bae"]
 [ext_resource type="Texture2D" uid="uid://b5js2fl1vponc" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00027.png" id="29_w8mgu"]
 [ext_resource type="Texture2D" uid="uid://c5uqd0t26xpjq" path="res://Assets/Player/Run Hero Animation/Asset 675_00003.png" id="30_5vx0i"]
+[ext_resource type="Texture2D" uid="uid://xv2xx7nberxp" path="res://Assets/Player/Hero Death Animation/Dimi death_00028.png" id="30_baleo"]
 [ext_resource type="Texture2D" uid="uid://cvinlvbntr66p" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00028.png" id="30_jcvtq"]
 [ext_resource type="Texture2D" uid="uid://ndqwl0qlaimq" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00003.png" id="30_o5qiy"]
 [ext_resource type="Texture2D" uid="uid://cu20vpmfj2qoc" path="res://Assets/Player/Run Hero Animation/Asset 675_00004.png" id="31_7ohpq"]
+[ext_resource type="Texture2D" uid="uid://dgw5h11f5ruw5" path="res://Assets/Player/Hero Death Animation/Dimi death_00029.png" id="31_kgs2i"]
 [ext_resource type="Texture2D" uid="uid://3yevh81qhca5" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00004.png" id="31_mbcf7"]
 [ext_resource type="Texture2D" uid="uid://csns11pvicgib" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00029.png" id="31_ww31a"]
+[ext_resource type="Texture2D" uid="uid://de1im20grxbbr" path="res://Assets/Player/Hero Death Animation/Dimi death_00030.png" id="32_0hr5b"]
 [ext_resource type="Texture2D" uid="uid://f21jpq2khb0o" path="res://Assets/Player/Run Hero Animation/Asset 675_00005.png" id="32_dhq18"]
 [ext_resource type="Texture2D" uid="uid://dsnchukgawspc" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00030.png" id="32_gn8j6"]
 [ext_resource type="Texture2D" uid="uid://bu7a453blm4s7" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00005.png" id="32_jeycn"]
 [ext_resource type="Texture2D" uid="uid://cxyaskpp4122d" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00006.png" id="33_2dt07"]
 [ext_resource type="Texture2D" uid="uid://bnqmie32q2viv" path="res://Assets/Player/Run Hero Animation/Asset 675_00006.png" id="33_5tuc7"]
 [ext_resource type="Texture2D" uid="uid://fitx2qvpf306" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00031.png" id="33_uxbux"]
+[ext_resource type="Texture2D" uid="uid://cxr2ueu36pnyk" path="res://Assets/Player/Hero Death Animation/Dimi death_00031.png" id="33_yionb"]
 [ext_resource type="Texture2D" uid="uid://3glpx2fpavg6" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00032.png" id="34_cj88g"]
 [ext_resource type="Texture2D" uid="uid://dwqeotc2ncbes" path="res://Assets/Player/Run Hero Animation/Asset 675_00007.png" id="34_gyjw2"]
+[ext_resource type="Texture2D" uid="uid://xfcpkducjuyt" path="res://Assets/Player/Hero Death Animation/Dimi death_00032.png" id="34_mdhoc"]
 [ext_resource type="Texture2D" uid="uid://ct2d3y4hw2tgx" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00007.png" id="34_qbrby"]
 [ext_resource type="Texture2D" uid="uid://bqft64m7kv3gg" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00008.png" id="35_0ck38"]
 [ext_resource type="Texture2D" uid="uid://bgq4d664cs3bl" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00033.png" id="35_7hfkr"]
 [ext_resource type="Texture2D" uid="uid://cgb0yi6pjg7x3" path="res://Assets/Player/Run Hero Animation/Asset 675_00008.png" id="35_ap068"]
+[ext_resource type="Texture2D" uid="uid://cohfw6ihhufxt" path="res://Assets/Player/Hero Death Animation/Dimi death_00033.png" id="35_pr0xr"]
 [ext_resource type="Texture2D" uid="uid://b5j7xtyle5iog" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00034.png" id="36_60xcl"]
+[ext_resource type="Texture2D" uid="uid://4ms04rkqu42d" path="res://Assets/Player/Hero Death Animation/Dimi death_00034.png" id="36_88dwi"]
 [ext_resource type="Texture2D" uid="uid://da88qpp5coanj" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00009.png" id="36_aeihd"]
 [ext_resource type="Texture2D" uid="uid://308sfo8gh1r2" path="res://Assets/Player/Run Hero Animation/Asset 675_00009.png" id="36_e32up"]
 [ext_resource type="Texture2D" uid="uid://4cmpjsl2ald6" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00010.png" id="37_bpyv7"]
 [ext_resource type="Texture2D" uid="uid://ckcg3610igdwh" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00035.png" id="37_gwtn1"]
 [ext_resource type="Texture2D" uid="uid://ss7dwramolxy" path="res://Assets/Player/Run Hero Animation/Asset 675_00010.png" id="37_pk162"]
+[ext_resource type="Texture2D" uid="uid://ukfsy3ojp1fj" path="res://Assets/Player/Hero Death Animation/Dimi death_00035.png" id="37_trx0m"]
 [ext_resource type="Texture2D" uid="uid://di5jdv1qbqluk" path="res://Assets/Player/Run Hero Animation/Asset 675_00011.png" id="38_4a5a1"]
+[ext_resource type="Texture2D" uid="uid://dsa2uo3djhkgb" path="res://Assets/Player/Hero Death Animation/Dimi death_00036.png" id="38_7fmqd"]
 [ext_resource type="Texture2D" uid="uid://c3jgncaj7u1ng" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00011.png" id="38_cvktk"]
 [ext_resource type="Texture2D" uid="uid://fs8cbckwox4p" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00036.png" id="38_jjh6n"]
 [ext_resource type="Texture2D" uid="uid://bqxatvmtfuj62" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00012.png" id="39_b0pbf"]
+[ext_resource type="Texture2D" uid="uid://cdtgodffghen2" path="res://Assets/Player/Hero Death Animation/Dimi death_00037.png" id="39_l3kyt"]
 [ext_resource type="Texture2D" uid="uid://lgpiynxgurvs" path="res://Assets/Player/Run Hero Animation/Asset 675_00012.png" id="39_sauhj"]
 [ext_resource type="Texture2D" uid="uid://cx1n7gq3nc88c" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00037.png" id="39_sp4am"]
 [ext_resource type="Texture2D" uid="uid://br0vyxlvl73ct" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00013.png" id="40_lprsy"]
+[ext_resource type="Texture2D" uid="uid://85gjqgc7s6lp" path="res://Assets/Player/Hero Death Animation/Dimi death_00038.png" id="40_n0mg0"]
 [ext_resource type="Texture2D" uid="uid://bn7a303vgu5fc" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00038.png" id="40_q3y0p"]
 [ext_resource type="Texture2D" uid="uid://gkudo6q0xesr" path="res://Assets/Player/Run Hero Animation/Asset 675_00013.png" id="40_x77tl"]
+[ext_resource type="Texture2D" uid="uid://2i54riixytv2" path="res://Assets/Player/Hero Death Animation/Dimi death_00039.png" id="41_8odhp"]
 [ext_resource type="Texture2D" uid="uid://cb2po4y4dm502" path="res://Assets/Player/Run Hero Animation/Asset 675_00014.png" id="41_51bc0"]
 [ext_resource type="Texture2D" uid="uid://g6duk77rcxep" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00039.png" id="41_cfb43"]
 [ext_resource type="Texture2D" uid="uid://drsycldpnqyy" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00014.png" id="41_dcd7b"]
+[ext_resource type="Texture2D" uid="uid://dxfmbh2iaru1v" path="res://Assets/Player/Hero Death Animation/Dimi death_00040.png" id="42_1515g"]
 [ext_resource type="Texture2D" uid="uid://wtuid0sr1a0" path="res://Assets/Player/Run Hero Animation/Asset 675_00015.png" id="42_b57am"]
 [ext_resource type="Texture2D" uid="uid://dk2eoq0nyx76r" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00040.png" id="42_nc0ay"]
 [ext_resource type="Texture2D" uid="uid://bopd4fiytnbko" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00015.png" id="42_nfesj"]
+[ext_resource type="Texture2D" uid="uid://ibq3yx378w65" path="res://Assets/Player/Hero Death Animation/Dimi death_00041.png" id="43_2pg18"]
 [ext_resource type="Texture2D" uid="uid://b6n1mcbuy7ix8" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00016.png" id="43_7n0hs"]
 [ext_resource type="Texture2D" uid="uid://bvfb23bci0vpu" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00041.png" id="43_jq5pw"]
 [ext_resource type="Texture2D" uid="uid://dhjjfyg88r18" path="res://Assets/Player/Run Hero Animation/Asset 675_00016.png" id="43_lx0j2"]
 [ext_resource type="Texture2D" uid="uid://dnko8q0dd18vr" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00042.png" id="44_c80xq"]
+[ext_resource type="Texture2D" uid="uid://b1a51rkt8xyor" path="res://Assets/Player/Hero Death Animation/Dimi death_00042.png" id="44_hine4"]
 [ext_resource type="Texture2D" uid="uid://bag0r1q41gqgd" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00017.png" id="44_jj0w8"]
 [ext_resource type="Texture2D" uid="uid://csndh6kaj3w60" path="res://Assets/Player/Run Hero Animation/Asset 675_00017.png" id="44_swuhc"]
+[ext_resource type="Texture2D" uid="uid://b6bip30b4cwvu" path="res://Assets/Player/Hero Death Animation/Dimi death_00043.png" id="45_fdpam"]
 [ext_resource type="Texture2D" uid="uid://bm80i5n0sw011" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00018.png" id="45_fw7h7"]
 [ext_resource type="Texture2D" uid="uid://c1oxx4bhqftm" path="res://Assets/Player/Run Hero Animation/Asset 675_00018.png" id="45_onliw"]
 [ext_resource type="Texture2D" uid="uid://tpofcwmxsffu" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00043.png" id="45_rx3ne"]
 [ext_resource type="Texture2D" uid="uid://cayq4jifk46nr" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00019.png" id="46_8vsg6"]
 [ext_resource type="Texture2D" uid="uid://rsj7xabw1mm7" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00044.png" id="46_a4wc5"]
 [ext_resource type="Texture2D" uid="uid://cvq2t3ypi2i82" path="res://Assets/Player/Run Hero Animation/Asset 675_00019.png" id="46_mdhxe"]
+[ext_resource type="Texture2D" uid="uid://fjookj718bbs" path="res://Assets/Player/Hero Death Animation/Dimi death_00044.png" id="46_pdbhf"]
 [ext_resource type="Texture2D" uid="uid://mdi3hlf40vkv" path="res://Assets/Player/Run Hero Animation/Asset 675_00020.png" id="47_7hfdh"]
+[ext_resource type="Texture2D" uid="uid://btdvxyaw06cyk" path="res://Assets/Player/Hero Death Animation/Dimi death_00045.png" id="47_abgco"]
 [ext_resource type="Texture2D" uid="uid://c1r0uvu8bpi4e" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00020.png" id="47_d5v2u"]
 [ext_resource type="Texture2D" uid="uid://8hk6tik5bm3l" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00045.png" id="47_nkm0y"]
+[ext_resource type="Texture2D" uid="uid://yy5rr2jxa0gm" path="res://Assets/Player/Hero Death Animation/Dimi death_00046.png" id="48_6pyj2"]
 [ext_resource type="Texture2D" uid="uid://byj1bmpu7ahgh" path="res://Assets/Player/Run Hero Animation/Asset 675_00021.png" id="48_hnuec"]
 [ext_resource type="Texture2D" uid="uid://cpe0tbsaoycrw" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00046.png" id="48_ruwud"]
 [ext_resource type="Texture2D" uid="uid://cnt6m05s21nj1" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00021.png" id="48_w74y1"]
+[ext_resource type="Texture2D" uid="uid://cxefo3fqpj71b" path="res://Assets/Player/Hero Death Animation/Dimi death_00047.png" id="49_7dgdd"]
 [ext_resource type="Texture2D" uid="uid://rscgtwhs3m38" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00022.png" id="49_c4ueb"]
 [ext_resource type="Texture2D" uid="uid://xwuw6c3106yi" path="res://Assets/Player/Run Hero Animation/Asset 675_00022.png" id="49_kcc1s"]
 [ext_resource type="Texture2D" uid="uid://cwgbnnai3jves" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00047.png" id="49_ui0yw"]
 [ext_resource type="Texture2D" uid="uid://cm17tqayx428t" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00023.png" id="50_2bwtc"]
+[ext_resource type="Texture2D" uid="uid://bkduhwlrnec5d" path="res://Assets/Player/Hero Death Animation/Dimi death_00048.png" id="50_2kjfj"]
 [ext_resource type="Texture2D" uid="uid://b2nxhimwlipo5" path="res://Assets/Player/Run Hero Animation/Asset 675_00023.png" id="50_22w5i"]
 [ext_resource type="Texture2D" uid="uid://chwwd7luqtnc1" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00048.png" id="50_ihujc"]
 [ext_resource type="Texture2D" uid="uid://q1d0oy86bwlh" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00049.png" id="51_ms043"]
 [ext_resource type="Texture2D" uid="uid://56rpuek2ntbr" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00024.png" id="51_r6l5m"]
+[ext_resource type="Texture2D" uid="uid://cjubyhgqhqpfv" path="res://Assets/Player/Hero Death Animation/Dimi death_00049.png" id="51_s7tpy"]
 [ext_resource type="Texture2D" uid="uid://b4b50hsinpllb" path="res://Assets/Player/Run Hero Animation/Asset 675_00024.png" id="51_yae1s"]
 [ext_resource type="Texture2D" uid="uid://jl0lvb2ujlqe" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00050.png" id="52_h00i4"]
 [ext_resource type="Texture2D" uid="uid://bloqbocou6loo" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00025.png" id="52_h64vw"]
@@ -153,6 +203,161 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_80tt4"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ms043")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h00i4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_frfja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kot2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ke1in")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_uopdd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lryjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_halid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xmsya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_o0mko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8xu0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8pvfw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_nkhot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_xjh6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2uq5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_qy02k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_qnwhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_wk7ol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_4ylx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_r1pgb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_874c6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_q2weo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_lat8r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_o805s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_gupsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_y2dhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_r3sk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_s5bae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_baleo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_kgs2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_0hr5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_yionb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_mdhoc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_pr0xr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_88dwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_trx0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_7fmqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_l3kyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_n0mg0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_8odhp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_1515g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_2pg18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_hine4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_fdpam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_pdbhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_abgco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_6pyj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_7dgdd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_2kjfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_s7tpy")
+}],
+"loop": false,
+"name": &"Death_Animation",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("15_7gtqf")
@@ -658,17 +863,20 @@ animations = [{
 size = Vector2(76, 127)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("PlayerSprite")]
+position = Vector2(404, 289)
 script = ExtResource("1_ww0jn")
 PlayerSprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(302, 146)
+position = Vector2(8, -1)
 scale = Vector2(0.11875927, 0.11962952)
 sprite_frames = SubResource("SpriteFrames_80tt4")
-animation = &"DoubleJump_Rise"
-frame = 12
+animation = &"Death_Animation"
+frame = 49
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(305, 147.5)
+position = Vector2(11, 0)
 shape = SubResource("RectangleShape2D_ww0jn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
