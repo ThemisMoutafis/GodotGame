@@ -242,46 +242,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("43_jq5pw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("44_c80xq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("45_rx3ne")
-}, {
-"duration": 1.0,
-"texture": ExtResource("46_a4wc5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("47_nkm0y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("48_ruwud")
-}, {
-"duration": 1.0,
-"texture": ExtResource("49_ui0yw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("50_ihujc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("51_ms043")
-}, {
-"duration": 1.0,
-"texture": ExtResource("52_h00i4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("53_frfja")
-}, {
-"duration": 1.0,
-"texture": ExtResource("54_kot2q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("55_ke1in")
 }],
 "loop": false,
 "name": &"DoubleJump_Fall",
-"speed": 58.0
+"speed": 28.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -325,7 +289,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"DoubleJump_Land",
-"speed": 32.0
+"speed": 18.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -369,7 +333,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"DoubleJump_Rise",
-"speed": 32.0
+"speed": 36.0
 }, {
 "frames": [{
 "duration": 1.0,

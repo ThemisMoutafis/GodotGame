@@ -22,6 +22,7 @@ size = Vector2(64, 64)
 script = ExtResource("1_rvmlp")
 
 [node name="Player" parent="." instance=ExtResource("1_lijmk")]
+position = Vector2(32, 128)
 
 [node name="Floor" type="StaticBody2D" parent="."]
 

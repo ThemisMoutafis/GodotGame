@@ -8,11 +8,12 @@ public partial class Player : CharacterBody2D
     [Export] public float JumpVelocity = -400.0f;
     [Export] public float JumpCutValue = 0.5f;
     [Export] public float FallGravityMultiplier = 2.0f;
+    [Export] public float LandingThreshold = 150.0f; // Lowered slightly for better feel
 
     [ExportGroup("Double Jump Settings")]
     [Export] public int MaxJumps = 2; 
-    [Export] public float MaxFloatTime = 0.2f; // How long Dimi hangs in the air
-    [Export] public float ApexCatchThreshold = -10.0f; // Sensitivity of the "Peak" detection
+    [Export] public float MaxFloatTime = 0.2f;
+    [Export] public float ApexCatchThreshold = -10.0f;
 
     [ExportGroup("Forgiveness")]
     [Export] public float JumpBufferTime = 0.15f;
@@ -26,13 +27,13 @@ public partial class Player : CharacterBody2D
     private float _coyoteCounter = 0; 
     private bool _wasInAir = false;
     private bool _isLanding = false;
+    private float _previousYVelocity = 0f; // Memory of the previous frame's fall speed
 
     private bool _usingDoubleJumpSet = false;
     private bool _isDoubleJumpStarting = false;
     private bool _isApexLocked = false;
     private bool _hasFloatedThisJump = false; 
     private float _floatTimer = 0f;
-  
 
     public override void _Ready()
     {
@@ -42,11 +43,9 @@ public partial class Player : CharacterBody2D
 
     private void OnAnimationFinished()
     {
-        // ONLY handle landing here.
         if (PlayerSprite.Animation == "Land" || PlayerSprite.Animation == "DoubleJump_Land")
             _isLanding = false;
 
-        // We removed the Apex trigger from here to prevent the "Double Play" bug.
         if (PlayerSprite.Animation == "DoubleJump_Rise")
             _isDoubleJumpStarting = false;
     }
@@ -58,6 +57,21 @@ public partial class Player : CharacterBody2D
 
         if (IsOnFloor())
         {
+            if (_wasInAir)
+            {
+                // Use the memory of the previous frame's velocity
+                if (_previousYVelocity > LandingThreshold)
+                {
+                    _isLanding = true;
+                    string landAnim = _usingDoubleJumpSet ? "DoubleJump_Land" : "Land";
+                    if (PlayerSprite.SpriteFrames.HasAnimation(landAnim))
+                    {
+                        PlayerSprite.Play(landAnim);
+                    }
+                }
+                _wasInAir = false; 
+            }
+
             _coyoteCounter = CoyoteTime;
             _jumpCount = 0; 
             _isDoubleJumpStarting = false;
@@ -69,14 +83,12 @@ public partial class Player : CharacterBody2D
         {
             _coyoteCounter -= (float)delta;
 
-            // THE INSTANT CATCHER: Happens the MOMENT you stop moving up.
-            // This bypasses animation lag entirely.
-            if (_jumpCount == 2 && !_hasFloatedThisJump && velocity.Y >= -10.0f)
+            if (_jumpCount == MaxJumps && !_hasFloatedThisJump && velocity.Y >= ApexCatchThreshold)
             {
                 if (!IsOnCeiling() && !IsOnWall())
                 {
                     _isApexLocked = true;
-                    _isDoubleJumpStarting = false; // Kill the Rise lock immediately
+                    _isDoubleJumpStarting = false;
                     _floatTimer = MaxFloatTime;
                     _hasFloatedThisJump = true;
                     velocity.Y = 0; 
@@ -95,7 +107,8 @@ public partial class Player : CharacterBody2D
                 float finalGravity = (velocity.Y > 0) ? currentGravity * FallGravityMultiplier : currentGravity;
                 velocity.Y += finalGravity * (float)delta;
             }
-            _wasInAir = true;
+
+            if (velocity.Y > LandingThreshold) _wasInAir = true;
         }
 
         HandleJumpInput(ref velocity);
@@ -104,6 +117,9 @@ public partial class Player : CharacterBody2D
 
         Velocity = velocity;
         MoveAndSlide();
+
+        // Save velocity for the next frame's impact check
+        _previousYVelocity = velocity.Y;
     }
 
     private void HandleJumpInput(ref Vector2 velocity)
@@ -155,24 +171,11 @@ public partial class Player : CharacterBody2D
             _isApexLocked = false;
         }
 
-        // Priority 1: Locks
         if (_isLanding || _isDoubleJumpStarting || _isApexLocked) return;
 
-        // Priority 2: Landing
-        if (IsOnFloor() && _wasInAir)
-        {
-            string landAnim = _usingDoubleJumpSet ? "DoubleJump_Land" : "Land";
-            _isLanding = true;
-            PlayerSprite.Play(landAnim);
-            _wasInAir = false;
-            return;
-        }
-
-        // Priority 3: Air/Ground
         if (!IsOnFloor())
         {
             string prefix = _usingDoubleJumpSet ? "DoubleJump_" : "Jump_";
-            // Strict Toggle: No "Apex" state here.
             if (velocity.Y < 0) PlayerSprite.Play(prefix + "Rise");
             else PlayerSprite.Play(prefix + "Fall");
         }
