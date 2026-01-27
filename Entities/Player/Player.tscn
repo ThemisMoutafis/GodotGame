@@ -1,4 +1,4 @@
-[gd_scene load_steps=203 format=3 uid="uid://bwk6m2y1e5c8i"]
+[gd_scene load_steps=201 format=3 uid="uid://bwk6m2y1e5c8i"]
 
 [ext_resource type="Script" uid="uid://uhktpy1peuks" path="res://Entities/Player/Player.cs" id="1_ww0jn"]
 [ext_resource type="Texture2D" uid="uid://dvbg87ishnfa6" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00000.png" id="2_elj48"]
@@ -40,12 +40,10 @@
 [ext_resource type="Texture2D" uid="uid://b2xol8lmpdnd3" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00012.png" id="14_1x22f"]
 [ext_resource type="Texture2D" uid="uid://bid1joga4mg7f" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00012.png" id="14_70klf"]
 [ext_resource type="Texture2D" uid="uid://buoh72qvq1bxx" path="res://Assets/Player/Hero Death Animation/Dimi death_00012.png" id="14_nkhot"]
-[ext_resource type="Texture2D" uid="uid://bq2qrg74lir6i" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00013.png" id="15_7gtqf"]
 [ext_resource type="Texture2D" uid="uid://d3ims5y5oddvw" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00013.png" id="15_hya8c"]
 [ext_resource type="Texture2D" uid="uid://bq600epr4wqcy" path="res://Assets/Player/Hero Death Animation/Dimi death_00013.png" id="15_xjh6b"]
 [ext_resource type="Texture2D" uid="uid://nda3kaop7l5o" path="res://Assets/Player/Hero Death Animation/Dimi death_00014.png" id="16_2uq5r"]
 [ext_resource type="Texture2D" uid="uid://bluauhol2hnj4" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00014.png" id="16_f2hyx"]
-[ext_resource type="Texture2D" uid="uid://cbvuny16igtmw" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00015.png" id="17_13lhq"]
 [ext_resource type="Texture2D" uid="uid://b8mv1tmyyiwjc" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00015.png" id="17_dhm1p"]
 [ext_resource type="Texture2D" uid="uid://bks6e2r266t24" path="res://Assets/Player/Hero Death Animation/Dimi death_00015.png" id="17_qy02k"]
 [ext_resource type="Texture2D" uid="uid://csbmg2qdwu8vu" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00016.png" id="18_0n3a8"]
@@ -360,12 +358,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("15_7gtqf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_13lhq")
-}, {
-"duration": 1.0,
 "texture": ExtResource("18_0n3a8")
 }, {
 "duration": 1.0,
@@ -391,7 +383,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"DoubleJump_Apex",
-"speed": 32.0
+"speed": 26.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -871,9 +863,7 @@ PlayerSprite = NodePath("Sprite2D")
 position = Vector2(8, -1)
 scale = Vector2(0.11875927, 0.11962952)
 sprite_frames = SubResource("SpriteFrames_80tt4")
-animation = &"Death_Animation"
-frame = 49
-frame_progress = 1.0
+animation = &"DoubleJump_Apex"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(11, 0)
