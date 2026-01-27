@@ -5,7 +5,7 @@ public partial class Player : CharacterBody2D
 {
     [ExportGroup("Movement")]
     [Export] public float Speed = 300.0f;
-    [Export] public float JumpVelocity = -400.0f;
+    [Export] public float JumpVelocity = -500.0f;
     [Export] public float JumpCutValue = 0.5f;
     [Export] public float FallGravityMultiplier = 2.0f;
     [Export] public float LandingThreshold = 150.0f;
