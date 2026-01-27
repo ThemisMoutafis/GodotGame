@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bwk6m2y1e5c8i"]
+[gd_scene load_steps=54 format=3 uid="uid://bwk6m2y1e5c8i"]
 
 [ext_resource type="Script" uid="uid://uhktpy1peuks" path="res://Entities/Player/Player.cs" id="1_ww0jn"]
 [ext_resource type="Texture2D" uid="uid://b7ccphrcn8gxs" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00000.png" id="2_tepoh"]
@@ -26,6 +26,31 @@
 [ext_resource type="Texture2D" uid="uid://bawt8vkb8xfod" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00022.png" id="24_t6o43"]
 [ext_resource type="Texture2D" uid="uid://b3noknv5ertdj" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00023.png" id="25_0k8yw"]
 [ext_resource type="Texture2D" uid="uid://d1n3npgmi4rf2" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00024.png" id="26_jg4gl"]
+[ext_resource type="Texture2D" uid="uid://bilm43p5jy4du" path="res://Assets/Player/Run Hero Animation/Asset 675_00000.png" id="27_55aqy"]
+[ext_resource type="Texture2D" uid="uid://2exk8qo1448c" path="res://Assets/Player/Run Hero Animation/Asset 675_00001.png" id="28_y5ktq"]
+[ext_resource type="Texture2D" uid="uid://c4c18qm4esfhr" path="res://Assets/Player/Run Hero Animation/Asset 675_00002.png" id="29_5sx84"]
+[ext_resource type="Texture2D" uid="uid://c5uqd0t26xpjq" path="res://Assets/Player/Run Hero Animation/Asset 675_00003.png" id="30_5vx0i"]
+[ext_resource type="Texture2D" uid="uid://cu20vpmfj2qoc" path="res://Assets/Player/Run Hero Animation/Asset 675_00004.png" id="31_7ohpq"]
+[ext_resource type="Texture2D" uid="uid://f21jpq2khb0o" path="res://Assets/Player/Run Hero Animation/Asset 675_00005.png" id="32_dhq18"]
+[ext_resource type="Texture2D" uid="uid://bnqmie32q2viv" path="res://Assets/Player/Run Hero Animation/Asset 675_00006.png" id="33_5tuc7"]
+[ext_resource type="Texture2D" uid="uid://dwqeotc2ncbes" path="res://Assets/Player/Run Hero Animation/Asset 675_00007.png" id="34_gyjw2"]
+[ext_resource type="Texture2D" uid="uid://cgb0yi6pjg7x3" path="res://Assets/Player/Run Hero Animation/Asset 675_00008.png" id="35_ap068"]
+[ext_resource type="Texture2D" uid="uid://308sfo8gh1r2" path="res://Assets/Player/Run Hero Animation/Asset 675_00009.png" id="36_e32up"]
+[ext_resource type="Texture2D" uid="uid://ss7dwramolxy" path="res://Assets/Player/Run Hero Animation/Asset 675_00010.png" id="37_pk162"]
+[ext_resource type="Texture2D" uid="uid://di5jdv1qbqluk" path="res://Assets/Player/Run Hero Animation/Asset 675_00011.png" id="38_4a5a1"]
+[ext_resource type="Texture2D" uid="uid://lgpiynxgurvs" path="res://Assets/Player/Run Hero Animation/Asset 675_00012.png" id="39_sauhj"]
+[ext_resource type="Texture2D" uid="uid://gkudo6q0xesr" path="res://Assets/Player/Run Hero Animation/Asset 675_00013.png" id="40_x77tl"]
+[ext_resource type="Texture2D" uid="uid://cb2po4y4dm502" path="res://Assets/Player/Run Hero Animation/Asset 675_00014.png" id="41_51bc0"]
+[ext_resource type="Texture2D" uid="uid://wtuid0sr1a0" path="res://Assets/Player/Run Hero Animation/Asset 675_00015.png" id="42_b57am"]
+[ext_resource type="Texture2D" uid="uid://dhjjfyg88r18" path="res://Assets/Player/Run Hero Animation/Asset 675_00016.png" id="43_lx0j2"]
+[ext_resource type="Texture2D" uid="uid://csndh6kaj3w60" path="res://Assets/Player/Run Hero Animation/Asset 675_00017.png" id="44_swuhc"]
+[ext_resource type="Texture2D" uid="uid://c1oxx4bhqftm" path="res://Assets/Player/Run Hero Animation/Asset 675_00018.png" id="45_onliw"]
+[ext_resource type="Texture2D" uid="uid://cvq2t3ypi2i82" path="res://Assets/Player/Run Hero Animation/Asset 675_00019.png" id="46_mdhxe"]
+[ext_resource type="Texture2D" uid="uid://mdi3hlf40vkv" path="res://Assets/Player/Run Hero Animation/Asset 675_00020.png" id="47_7hfdh"]
+[ext_resource type="Texture2D" uid="uid://byj1bmpu7ahgh" path="res://Assets/Player/Run Hero Animation/Asset 675_00021.png" id="48_hnuec"]
+[ext_resource type="Texture2D" uid="uid://xwuw6c3106yi" path="res://Assets/Player/Run Hero Animation/Asset 675_00022.png" id="49_kcc1s"]
+[ext_resource type="Texture2D" uid="uid://b2nxhimwlipo5" path="res://Assets/Player/Run Hero Animation/Asset 675_00023.png" id="50_22w5i"]
+[ext_resource type="Texture2D" uid="uid://b4b50hsinpllb" path="res://Assets/Player/Run Hero Animation/Asset 675_00024.png" id="51_yae1s"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_80tt4"]
 animations = [{
@@ -108,6 +133,86 @@ animations = [{
 "loop": true,
 "name": &"Idle_Animation",
 "speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_55aqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_y5ktq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_5sx84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_5vx0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_7ohpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_dhq18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_5tuc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_gyjw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_ap068")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_e32up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_pk162")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_4a5a1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_sauhj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_x77tl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_51bc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_b57am")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_lx0j2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_swuhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_onliw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_mdhxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_7hfdh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_hnuec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_kcc1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_22w5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_yae1s")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 24.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ww0jn"]
@@ -121,9 +226,10 @@ PlayerSprite = NodePath("Sprite2D")
 position = Vector2(302, 146)
 scale = Vector2(0.11875927, 0.11962952)
 sprite_frames = SubResource("SpriteFrames_80tt4")
-animation = &"Idle_Animation"
-autoplay = "Idle_Animation"
-frame_progress = 0.27408606
+animation = &"Run"
+autoplay = "Run"
+frame = 2
+frame_progress = 0.32472005
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(305, 147.5)
