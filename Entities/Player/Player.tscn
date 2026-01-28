@@ -860,16 +860,13 @@ JumpVelocity = -600.0
 PlayerSprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
 position = Vector2(8, -1)
 scale = Vector2(0.11875927, 0.11962952)
 sprite_frames = SubResource("SpriteFrames_80tt4")
 animation = &"DoubleJump_Apex"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(11, 0)
 shape = SubResource("RectangleShape2D_ww0jn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false

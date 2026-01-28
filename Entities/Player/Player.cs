@@ -4,7 +4,9 @@ using System;
 public partial class Player : CharacterBody2D
 {
     [ExportGroup("Movement")]
-    [Export] public float Speed = 300.0f;
+    [Export] public float WalkSpeed = 300.0f;
+    [Export] public float RunSpeed = 500.0f;
+    [Export] public float Acceleration = 15.0f; 
     [Export] public float JumpVelocity = -500.0f;
     [Export] public float JumpCutValue = 0.5f;
     [Export] public float FallGravityMultiplier = 2.0f;
@@ -16,9 +18,9 @@ public partial class Player : CharacterBody2D
     [Export] public float ApexCatchThreshold = -10.0f;
 
     [ExportGroup("Camera Juice")]
-    
     [Export] public float DeathShakeIntensity = 8.0f;
     [Export] public float DeathShakeDuration = 0.15f;
+    [Export] public float RunZoomAmount = 0.9f; 
 
     [ExportGroup("Forgiveness")]
     [Export] public float JumpBufferTime = 0.15f;
@@ -40,8 +42,8 @@ public partial class Player : CharacterBody2D
     private bool _isApexLocked = false;
     private bool _hasFloatedThisJump = false; 
     private float _floatTimer = 0f;
-
     private Camera2D _childCamera;
+
     public override void _Ready()
     {
         if (PlayerSprite == null) GD.PrintErr("CRITICAL: Sprite node not found!");
@@ -67,30 +69,31 @@ public partial class Player : CharacterBody2D
         Vector2 velocity = Velocity;
         float currentGravity = GetGravity().Y;
 
+        // --- DEATH STATE ---
         if (_isDead)
-{
-    velocity.X = 0;
-    if (!IsOnFloor()) 
-    {
-        velocity.Y += currentGravity * (float)delta;
-    }
-    else 
-    {
-        // Check the speed we HAD right before we hit the floor
-        if (_previousYVelocity > LandingThreshold) 
         {
-            ApplyDeathShake();
-            _previousYVelocity = 0; // Reset so it only shakes once
+            velocity.X = 0;
+            if (!IsOnFloor()) 
+            {
+                velocity.Y += currentGravity * (float)delta;
+            }
+            else 
+            {
+                if (_previousYVelocity > LandingThreshold) 
+                {
+                    ApplyDeathShake();
+                    _previousYVelocity = 0; 
+                }
+                velocity.Y = 0;
+            }
+
+            Velocity = velocity;
+            MoveAndSlide();
+            _previousYVelocity = velocity.Y; 
+            return; 
         }
-        velocity.Y = 0;
-    }
 
-    Velocity = velocity;
-    MoveAndSlide();
-    _previousYVelocity = velocity.Y; // Update memory for next frame
-    return; 
-}
-
+        // --- GROUNDED STATE ---
         if (IsOnFloor())
         {
             if (_wasInAir)
@@ -112,6 +115,7 @@ public partial class Player : CharacterBody2D
         }
         else
         {
+            // --- AIRBORNE STATE ---
             _coyoteCounter -= (float)delta;
             if (_jumpCount == MaxJumps && !_hasFloatedThisJump && velocity.Y >= ApexCatchThreshold)
             {
@@ -141,7 +145,7 @@ public partial class Player : CharacterBody2D
         }
 
         HandleJumpInput(ref velocity);
-        HandleHorizontalMovement(ref velocity);
+        HandleHorizontalMovement(ref velocity, (float)delta);
         HandleAnimations(velocity);
 
         Velocity = velocity;
@@ -149,46 +153,32 @@ public partial class Player : CharacterBody2D
         _previousYVelocity = velocity.Y;
     }
 
-    private void ApplyDeathShake()
+    private void HandleHorizontalMovement(ref Vector2 velocity, float delta)
     {
-    // Fail-safe if the camera was never added
-    if (_childCamera == null) return;
+        Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 
-    Tween tween = GetTree().CreateTween();
-    
-    // Create a series of rapid, random shakes
-    for (int i = 0; i < 6; i++)
-    {
-        Vector2 shakeOffset = new Vector2(
-            (float)GD.RandRange(-DeathShakeIntensity, DeathShakeIntensity),
-            (float)GD.RandRange(-DeathShakeIntensity, DeathShakeIntensity)
-        );
+        // 2. Logic Change: isRunning is only true if Shift is held AND we are already moving
+        // We check Mathf.Abs(velocity.X) > 10.0f to ensure Dimi is "already walking"
+        bool isRunning = Input.IsActionPressed("run") && Mathf.Abs(velocity.X) > 10.0f;
+        float currentMaxSpeed = isRunning ? RunSpeed : WalkSpeed;
+
+        float moveSpeed = _isLanding ? currentMaxSpeed * 0.7f : currentMaxSpeed;
         
-        // Move to random offset, then back toward zero
-        tween.TweenProperty(_childCamera, "offset", shakeOffset, DeathShakeDuration / 6);
-    }
-    
-    // Ensure it ends perfectly at zero
-    tween.TweenProperty(_childCamera, "offset", Vector2.Zero, 0.05f);
-}
+        if (direction.X != 0) 
+        {
+            PlayerSprite.FlipH = direction.X < 0;
+            velocity.X = Mathf.MoveToward(velocity.X, direction.X * moveSpeed, Acceleration);
+        }
+        else 
+        {
+            velocity.X = Mathf.MoveToward(velocity.X, 0, Acceleration);
+        }
 
-    private void TriggerDeath()
-    {
-        if (_isDead) return;
-        _isDead = true;
-        _isApexLocked = false;
-        _isDoubleJumpStarting = false;
-        _floatTimer = 0;
-        if (PlayerSprite.SpriteFrames.HasAnimation("Death_Animation"))
-            PlayerSprite.Play("Death_Animation");
-    }
-
-    private void TriggerRevive()
-    {
-        if (!_isDead) return;
-        _isDead = false;
-        _isLanding = false;
-        PlayerSprite.Play("Idle_Animation");
+        if (_childCamera != null)
+        {
+            float targetZoom = (isRunning && Mathf.Abs(velocity.X) > WalkSpeed + 10) ? RunZoomAmount : 1.0f;
+            _childCamera.Zoom = _childCamera.Zoom.Lerp(new Vector2(targetZoom, targetZoom), 0.1f);
+        }
     }
 
     private void HandleJumpInput(ref Vector2 velocity)
@@ -215,15 +205,6 @@ public partial class Player : CharacterBody2D
             velocity.Y *= JumpCutValue;
     }
 
-    private void HandleHorizontalMovement(ref Vector2 velocity)
-    {
-        Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-        float moveSpeed = _isLanding ? Speed * 0.7f : Speed;
-        if (direction.X != 0) PlayerSprite.FlipH = direction.X < 0;
-        if (direction != Vector2.Zero) velocity.X = direction.X * moveSpeed;
-        else velocity.X = Mathf.MoveToward(Velocity.X, 0, moveSpeed);
-    }
-
     private void HandleAnimations(Vector2 velocity)
     {
         if (PlayerSprite == null || _isDead) return; 
@@ -247,5 +228,39 @@ public partial class Player : CharacterBody2D
             string nextAnim = Mathf.Abs(velocity.X) > 1.0f ? "Run" : "Idle_Animation";
             if (PlayerSprite.Animation != nextAnim) PlayerSprite.Play(nextAnim);
         }
+    }
+
+    private void ApplyDeathShake()
+    {
+        if (_childCamera == null) return;
+        Tween tween = GetTree().CreateTween();
+        for (int i = 0; i < 6; i++)
+        {
+            Vector2 shakeOffset = new Vector2(
+                (float)GD.RandRange(-DeathShakeIntensity, DeathShakeIntensity),
+                (float)GD.RandRange(-DeathShakeIntensity, DeathShakeIntensity)
+            );
+            tween.TweenProperty(_childCamera, "offset", shakeOffset, DeathShakeDuration / 6);
+        }
+        tween.TweenProperty(_childCamera, "offset", Vector2.Zero, 0.05f);
+    }
+
+    public void TriggerDeath()
+    {
+        if (_isDead) return;
+        _isDead = true;
+        _isApexLocked = false;
+        _isDoubleJumpStarting = false;
+        _floatTimer = 0;
+        if (PlayerSprite.SpriteFrames.HasAnimation("Death_Animation"))
+            PlayerSprite.Play("Death_Animation");
+    }
+
+    private void TriggerRevive()
+    {
+        if (!_isDead) return;
+        _isDead = false;
+        _isLanding = false;
+        PlayerSprite.Play("Idle_Animation");
     }
 }

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmc2vopq1xwak"]
+[gd_scene load_steps=9 format=3 uid="uid://cmc2vopq1xwak"]
 
 [ext_resource type="PackedScene" uid="uid://bwk6m2y1e5c8i" path="res://Entities/Player/Player.tscn" id="1_lijmk"]
 [ext_resource type="Script" uid="uid://d2ywheinskwo4" path="res://Levels/Gym.cs" id="1_rvmlp"]
+[ext_resource type="PackedScene" uid="uid://blhvec604b34v" path="res://Assets/Environment/Hazards/spike.tscn" id="3_v6co3"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lijmk"]
 distance = -320.0
@@ -23,6 +24,8 @@ script = ExtResource("1_rvmlp")
 
 [node name="Player" parent="." instance=ExtResource("1_lijmk")]
 position = Vector2(32, 128)
+Acceleration = 15.0
+RunZoomAmount = 0.9
 
 [node name="Floor" type="StaticBody2D" parent="."]
 
@@ -89,3 +92,12 @@ offset_top = 928.0
 offset_right = 992.0
 offset_bottom = 992.0
 color = Color(0.38810757, 0.075988255, 0.028389635, 1)
+
+[node name="Spike" parent="." instance=ExtResource("3_v6co3")]
+position = Vector2(1280, 992)
+
+[node name="Spike2" parent="." instance=ExtResource("3_v6co3")]
+position = Vector2(1344, 992)
+
+[node name="Spike3" parent="." instance=ExtResource("3_v6co3")]
+position = Vector2(1216, 896)
