@@ -24,8 +24,6 @@ script = ExtResource("1_rvmlp")
 
 [node name="Player" parent="." instance=ExtResource("1_lijmk")]
 position = Vector2(32, 128)
-Acceleration = 15.0
-RunZoomAmount = 0.9
 
 [node name="Floor" type="StaticBody2D" parent="."]
 
@@ -101,3 +99,6 @@ position = Vector2(1344, 992)
 
 [node name="Spike3" parent="." instance=ExtResource("3_v6co3")]
 position = Vector2(1216, 896)
+
+[node name="Spike4" parent="." instance=ExtResource("3_v6co3")]
+position = Vector2(768, 992)

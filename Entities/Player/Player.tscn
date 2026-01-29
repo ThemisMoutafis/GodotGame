@@ -1,4 +1,4 @@
-[gd_scene load_steps=201 format=3 uid="uid://bwk6m2y1e5c8i"]
+[gd_scene load_steps=219 format=3 uid="uid://bwk6m2y1e5c8i"]
 
 [ext_resource type="Script" uid="uid://uhktpy1peuks" path="res://Entities/Player/Player.cs" id="1_ww0jn"]
 [ext_resource type="Texture2D" uid="uid://dvbg87ishnfa6" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00000.png" id="2_elj48"]
@@ -26,11 +26,9 @@
 [ext_resource type="Texture2D" uid="uid://colc0kl8w4xvr" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00007.png" id="9_j7wye"]
 [ext_resource type="Texture2D" uid="uid://c2ovt8otkapas" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00007.png" id="9_vi0tq"]
 [ext_resource type="Texture2D" uid="uid://b71c8h6pxmipb" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00008.png" id="10_c5u7s"]
-[ext_resource type="Texture2D" uid="uid://ho7k7w4xy3os" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00008.png" id="10_kah1g"]
 [ext_resource type="Texture2D" uid="uid://djnkjxgechlhw" path="res://Assets/Player/Hero Death Animation/Dimi death_00008.png" id="10_xmsya"]
 [ext_resource type="Texture2D" uid="uid://dk8prnfyxx6o5" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00009.png" id="11_kcvdc"]
 [ext_resource type="Texture2D" uid="uid://cf83m3g3m2rof" path="res://Assets/Player/Hero Death Animation/Dimi death_00009.png" id="11_o0mko"]
-[ext_resource type="Texture2D" uid="uid://cmv63oilvmyn6" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00009.png" id="11_qyw8q"]
 [ext_resource type="Texture2D" uid="uid://dth2iprwkgiu8" path="res://Assets/Player/Hero Death Animation/Dimi death_00010.png" id="12_8xu0h"]
 [ext_resource type="Texture2D" uid="uid://bq2vir0a463wt" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00010.png" id="12_ow4hj"]
 [ext_resource type="Texture2D" uid="uid://dwnfrkw6f65a7" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00010.png" id="12_yn77o"]
@@ -46,7 +44,6 @@
 [ext_resource type="Texture2D" uid="uid://bluauhol2hnj4" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00014.png" id="16_f2hyx"]
 [ext_resource type="Texture2D" uid="uid://b8mv1tmyyiwjc" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00015.png" id="17_dhm1p"]
 [ext_resource type="Texture2D" uid="uid://bks6e2r266t24" path="res://Assets/Player/Hero Death Animation/Dimi death_00015.png" id="17_qy02k"]
-[ext_resource type="Texture2D" uid="uid://csbmg2qdwu8vu" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00016.png" id="18_0n3a8"]
 [ext_resource type="Texture2D" uid="uid://w1qswe8m230i" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00016.png" id="18_nfyot"]
 [ext_resource type="Texture2D" uid="uid://belqr2uo6t4dq" path="res://Assets/Player/Hero Death Animation/Dimi death_00016.png" id="18_qnwhx"]
 [ext_resource type="Texture2D" uid="uid://b637qaq8dkgwe" path="res://Assets/Player/Idle Hero Animation/Dimi_v2_00017.png" id="19_a3245"]
@@ -76,7 +73,6 @@
 [ext_resource type="Texture2D" uid="uid://bilm43p5jy4du" path="res://Assets/Player/Run Hero Animation/Asset 675_00000.png" id="27_55aqy"]
 [ext_resource type="Texture2D" uid="uid://cwt5ml7srxj3x" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00025.png" id="27_nas4s"]
 [ext_resource type="Texture2D" uid="uid://blhuluv0wclmj" path="res://Assets/Player/Hero Death Animation/Dimi death_00025.png" id="27_y2dhf"]
-[ext_resource type="Texture2D" uid="uid://can83oukg62f2" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00000.png" id="27_yt5vh"]
 [ext_resource type="Texture2D" uid="uid://m8lo21s4hy7b" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00001.png" id="28_jfyv5"]
 [ext_resource type="Texture2D" uid="uid://bhqku2b4g2vm6" path="res://Assets/Player/Hero Death Animation/Dimi death_00026.png" id="28_r3sk1"]
 [ext_resource type="Texture2D" uid="uid://2exk8qo1448c" path="res://Assets/Player/Run Hero Animation/Asset 675_00001.png" id="28_y5ktq"]
@@ -198,6 +194,28 @@
 [ext_resource type="Texture2D" uid="uid://e6g46s7p3kbh" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00043.png" id="70_r5akb"]
 [ext_resource type="Texture2D" uid="uid://63q0b4d2bft8" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00044.png" id="71_54b7l"]
 [ext_resource type="Texture2D" uid="uid://3221gs0fxu2e" path="res://Assets/Player/Jump Hero Animation/jump Dimi_00045.png" id="72_dxafk"]
+[ext_resource type="Texture2D" uid="uid://2fvybnrgt03k" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00000.png" id="195_qnwhx"]
+[ext_resource type="Texture2D" uid="uid://s4dsdiyje4cu" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00001.png" id="196_wk7ol"]
+[ext_resource type="Texture2D" uid="uid://c0sbgiw6ywks6" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00002.png" id="197_4ylx2"]
+[ext_resource type="Texture2D" uid="uid://bvusa7nmju7eb" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00003.png" id="198_r1pgb"]
+[ext_resource type="Texture2D" uid="uid://c61f0aiduku0w" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00004.png" id="199_874c6"]
+[ext_resource type="Texture2D" uid="uid://diaegrnklhrph" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00005.png" id="200_q2weo"]
+[ext_resource type="Texture2D" uid="uid://bckr6xu3ak4o8" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00006.png" id="201_lat8r"]
+[ext_resource type="Texture2D" uid="uid://but0kq2qvmogn" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00007.png" id="202_o805s"]
+[ext_resource type="Texture2D" uid="uid://cxb1ogncss4yc" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00008.png" id="203_gupsq"]
+[ext_resource type="Texture2D" uid="uid://d16wiyv68sx4p" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00009.png" id="204_y2dhf"]
+[ext_resource type="Texture2D" uid="uid://clshk2nljk54l" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00010.png" id="205_r3sk1"]
+[ext_resource type="Texture2D" uid="uid://c7xp07rooclum" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00011.png" id="206_s5bae"]
+[ext_resource type="Texture2D" uid="uid://dx082y3konft3" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00012.png" id="207_baleo"]
+[ext_resource type="Texture2D" uid="uid://pttw27stdsv1" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00013.png" id="208_kgs2i"]
+[ext_resource type="Texture2D" uid="uid://bcrctw4etdb0n" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00014.png" id="209_0hr5b"]
+[ext_resource type="Texture2D" uid="uid://dn4kq00t17lyl" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00015.png" id="210_yionb"]
+[ext_resource type="Texture2D" uid="uid://bxfy1ck0y1024" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00016.png" id="211_mdhoc"]
+[ext_resource type="Texture2D" uid="uid://dqm0s2r6nrkmu" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00017.png" id="212_pr0xr"]
+[ext_resource type="Texture2D" uid="uid://cgb77gqcl66fi" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00018.png" id="213_88dwi"]
+[ext_resource type="Texture2D" uid="uid://di6i0k5uao2b1" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00019.png" id="214_trx0m"]
+[ext_resource type="Texture2D" uid="uid://procb8saapyv" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00020.png" id="215_7fmqd"]
+[ext_resource type="Texture2D" uid="uid://dqhvrt851wq37" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00021.png" id="216_l3kyt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_80tt4"]
 animations = [{
@@ -358,9 +376,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("18_0n3a8")
-}, {
-"duration": 1.0,
 "texture": ExtResource("19_n7w0a")
 }, {
 "duration": 1.0,
@@ -514,12 +529,6 @@ animations = [{
 "texture": ExtResource("9_j7wye")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_kah1g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_qyw8q")
-}, {
-"duration": 1.0,
 "texture": ExtResource("12_yn77o")
 }, {
 "duration": 1.0,
@@ -530,7 +539,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"DoubleJump_Rise",
-"speed": 36.0
+"speed": 28.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -686,9 +695,6 @@ animations = [{
 "speed": 64.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("27_yt5vh")
-}, {
 "duration": 1.0,
 "texture": ExtResource("28_jfyv5")
 }, {
@@ -849,6 +855,77 @@ animations = [{
 "loop": true,
 "name": &"Run",
 "speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("195_qnwhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("196_wk7ol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("197_4ylx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("198_r1pgb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_874c6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("200_q2weo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("201_lat8r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_o805s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("203_gupsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("204_y2dhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("205_r3sk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("206_s5bae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("207_baleo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("208_kgs2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("209_0hr5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("210_yionb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("211_mdhoc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("212_pr0xr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("213_88dwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("214_trx0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("215_7fmqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("216_l3kyt")
+}],
+"loop": true,
+"name": &"Sprint",
+"speed": 42.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ww0jn"]
@@ -863,7 +940,7 @@ PlayerSprite = NodePath("Sprite2D")
 position = Vector2(8, -1)
 scale = Vector2(0.11875927, 0.11962952)
 sprite_frames = SubResource("SpriteFrames_80tt4")
-animation = &"DoubleJump_Apex"
+animation = &"Sprint"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(11, 0)

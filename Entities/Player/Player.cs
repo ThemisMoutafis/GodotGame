@@ -43,7 +43,7 @@ public partial class Player : CharacterBody2D
     private bool _hasFloatedThisJump = false; 
     private float _floatTimer = 0f;
     private Camera2D _childCamera;
-
+    private bool _isRunning = false;
     public override void _Ready()
     {
         if (PlayerSprite == null) GD.PrintErr("CRITICAL: Sprite node not found!");
@@ -159,8 +159,8 @@ public partial class Player : CharacterBody2D
 
         // 2. Logic Change: isRunning is only true if Shift is held AND we are already moving
         // We check Mathf.Abs(velocity.X) > 10.0f to ensure Dimi is "already walking"
-        bool isRunning = Input.IsActionPressed("run") && Mathf.Abs(velocity.X) > 10.0f;
-        float currentMaxSpeed = isRunning ? RunSpeed : WalkSpeed;
+        _isRunning = Input.IsActionPressed("run") && Mathf.Abs(velocity.X) > 10.0f;
+        float currentMaxSpeed = _isRunning ? RunSpeed : WalkSpeed;
 
         float moveSpeed = _isLanding ? currentMaxSpeed * 0.7f : currentMaxSpeed;
         
@@ -176,7 +176,7 @@ public partial class Player : CharacterBody2D
 
         if (_childCamera != null)
         {
-            float targetZoom = (isRunning && Mathf.Abs(velocity.X) > WalkSpeed + 10) ? RunZoomAmount : 1.0f;
+            float targetZoom = (_isRunning && Mathf.Abs(velocity.X) > WalkSpeed + 10) ? RunZoomAmount : 1.0f;
             _childCamera.Zoom = _childCamera.Zoom.Lerp(new Vector2(targetZoom, targetZoom), 0.1f);
         }
     }
@@ -222,6 +222,16 @@ public partial class Player : CharacterBody2D
             string prefix = _usingDoubleJumpSet ? "DoubleJump_" : "Jump_";
             if (velocity.Y < 0) PlayerSprite.Play(prefix + "Rise");
             else PlayerSprite.Play(prefix + "Fall");
+        }
+        else if (_isRunning)
+        {
+            
+            if (PlayerSprite.Animation != "Sprint") PlayerSprite.Play("Sprint");
+
+            // Sync leg speed to actual movement speed 
+            // This scales your editor FPS (e.g., 12fps) by the ratio of current speed
+            float speedFactor = Mathf.Abs(velocity.X) / RunSpeed;
+            PlayerSprite.SpeedScale = Mathf.Clamp(speedFactor * 1.2f, 0.8f, 1.5f);
         }
         else
         {
