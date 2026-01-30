@@ -929,7 +929,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ww0jn"]
-size = Vector2(76, 127)
+size = Vector2(60, 127)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("PlayerSprite")]
 script = ExtResource("1_ww0jn")
@@ -943,7 +943,7 @@ sprite_frames = SubResource("SpriteFrames_80tt4")
 animation = &"Sprint"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(11, 0)
+position = Vector2(8, 0)
 shape = SubResource("RectangleShape2D_ww0jn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
