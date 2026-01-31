@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://4negkirgouij"]
+
+[ext_resource type="Script" uid="uid://cgvc2lqodtk88" path="res://Hud.cs" id="1_7h7hr"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7h7hr"]
+size = Vector2(300, 50)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_idkyl"]
+size = Vector2(300, 50)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_i8gyb"]
+size = Vector2(300, 50)
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_7h7hr")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+custom_minimum_size = Vector2(300, 50)
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 330.0
+offset_bottom = 80.0
+texture_under = SubResource("PlaceholderTexture2D_7h7hr")
+texture_over = SubResource("PlaceholderTexture2D_idkyl")
+texture_progress = SubResource("PlaceholderTexture2D_i8gyb")
+tint_under = Color(0, 0, 0, 1)
+tint_over = Color(1, 1, 1, 0)
+tint_progress = Color(0.7461049, 0, 0.026228564, 0.98039216)

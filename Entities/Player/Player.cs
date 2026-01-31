@@ -12,6 +12,12 @@ public partial class Player : CharacterBody2D
     [Export] public float FallGravityMultiplier = 2.0f;
     [Export] public float LandingThreshold = 150.0f;
 
+    [ExportGroup("Health System")]
+    [Export] public int MaxHealth = 100;
+    [Export] public float IFrameDuration = 0.8f; // Time in seconds Dimi is untouchable after a hit
+    private int _currentHealth;
+    private bool _isInvincible = false;
+
     [ExportGroup("Double Jump Settings")]
     [Export] public int MaxJumps = 2; 
     [Export] public float MaxFloatTime = 0.2f;
@@ -44,12 +50,52 @@ public partial class Player : CharacterBody2D
     private float _floatTimer = 0f;
     private Camera2D _childCamera;
     private bool _isRunning = false;
+
     public override void _Ready()
     {
+        _currentHealth = MaxHealth; // Initialize health
         if (PlayerSprite == null) GD.PrintErr("CRITICAL: Sprite node not found!");
         _childCamera = GetNodeOrNull<Camera2D>("Camera2D");
 
         PlayerSprite.AnimationFinished += OnAnimationFinished;
+    }
+
+    // --- NEW: THE DAMAGE API ---
+    [Signal] public delegate void HealthChangedEventHandler(int newHealth);
+    public async void TakeDamage(int amount)
+    {
+        if (_isDead || _isInvincible) return;
+
+        _currentHealth -= amount;
+        // Emit the signal so the UI can "hear" it
+        EmitSignal(SignalName.HealthChanged, _currentHealth);
+        _isInvincible = true;
+        
+        GD.Print($"Dimi hit for {amount}! Health: {_currentHealth}/{MaxHealth}");
+
+        // Visual Feedback: Flash Red
+        PlayerSprite.Modulate = new Color(10, 1, 1, 1); // Over-brighten red
+        
+        if (_currentHealth <= 0)
+        {
+            _currentHealth = 0;
+            TriggerDeath();
+        }
+        else
+        {
+            ApplyHurtFlash(); // Brief red flash then return to normal
+        }
+
+        // Handle Invincibility period
+        await ToSignal(GetTree().CreateTimer(IFrameDuration), "timeout");
+        _isInvincible = false;
+        PlayerSprite.Modulate = new Color(1, 1, 1, 1); // Reset to normal
+    }
+
+    private void ApplyHurtFlash()
+    {
+        Tween tween = GetTree().CreateTween();
+        tween.TweenProperty(PlayerSprite, "modulate", new Color(1, 1, 1, 1), 0.2f).SetTrans(Tween.TransitionType.Quad);
     }
 
     private void OnAnimationFinished()
@@ -63,20 +109,17 @@ public partial class Player : CharacterBody2D
 
     public override void _PhysicsProcess(double delta)
     {
-        if (Input.IsKeyPressed(Key.Key1)) TriggerDeath();
+        // Debugging keys
+        if (Input.IsKeyPressed(Key.Key1)) TakeDamage(20);
         if (Input.IsKeyPressed(Key.Key2)) TriggerRevive();
 
         Vector2 velocity = Velocity;
         float currentGravity = GetGravity().Y;
 
-        // --- DEATH STATE ---
         if (_isDead)
         {
             velocity.X = 0;
-            if (!IsOnFloor()) 
-            {
-                velocity.Y += currentGravity * (float)delta;
-            }
+            if (!IsOnFloor()) velocity.Y += currentGravity * (float)delta;
             else 
             {
                 if (_previousYVelocity > LandingThreshold) 
@@ -156,12 +199,8 @@ public partial class Player : CharacterBody2D
     private void HandleHorizontalMovement(ref Vector2 velocity, float delta)
     {
         Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-
-        // 2. Logic Change: isRunning is only true if Shift is held AND we are already moving
-        // We check Mathf.Abs(velocity.X) > 10.0f to ensure Dimi is "already walking"
         _isRunning = Input.IsActionPressed("run") && Mathf.Abs(velocity.X) > 10.0f;
         float currentMaxSpeed = _isRunning ? RunSpeed : WalkSpeed;
-
         float moveSpeed = _isLanding ? currentMaxSpeed * 0.7f : currentMaxSpeed;
         
         if (direction.X != 0) 
@@ -169,10 +208,7 @@ public partial class Player : CharacterBody2D
             PlayerSprite.FlipH = direction.X < 0;
             velocity.X = Mathf.MoveToward(velocity.X, direction.X * moveSpeed, Acceleration);
         }
-        else 
-        {
-            velocity.X = Mathf.MoveToward(velocity.X, 0, Acceleration);
-        }
+        else velocity.X = Mathf.MoveToward(velocity.X, 0, Acceleration);
 
         if (_childCamera != null)
         {
@@ -208,7 +244,6 @@ public partial class Player : CharacterBody2D
     private void HandleAnimations(Vector2 velocity)
     {
         if (PlayerSprite == null || _isDead) return; 
-
         if (IsOnFloor() || IsOnWall() || IsOnCeiling())
         {
             _isDoubleJumpStarting = false;
@@ -225,11 +260,7 @@ public partial class Player : CharacterBody2D
         }
         else if (_isRunning)
         {
-            
             if (PlayerSprite.Animation != "Sprint") PlayerSprite.Play("Sprint");
-
-            // Sync leg speed to actual movement speed 
-            // This scales your editor FPS (e.g., 12fps) by the ratio of current speed
             float speedFactor = Mathf.Abs(velocity.X) / RunSpeed;
             PlayerSprite.SpeedScale = Mathf.Clamp(speedFactor * 1.2f, 0.8f, 1.5f);
         }
@@ -256,21 +287,33 @@ public partial class Player : CharacterBody2D
     }
 
     public void TriggerDeath()
-    {
-        if (_isDead) return;
-        _isDead = true;
-        _isApexLocked = false;
-        _isDoubleJumpStarting = false;
-        _floatTimer = 0;
-        if (PlayerSprite.SpriteFrames.HasAnimation("Death_Animation"))
-            PlayerSprite.Play("Death_Animation");
-    }
+{
+    if (_isDead) return;
 
-    private void TriggerRevive()
+    _isDead = true;
+    _currentHealth = 0; // Force health to zero for instant-kill hazards
+    
+    // Emit the signal so the HealthBar snaps to empty
+    EmitSignal(SignalName.HealthChanged, _currentHealth);
+
+    _isApexLocked = false;
+    _isDoubleJumpStarting = false;
+    _floatTimer = 0;
+
+    if (PlayerSprite.SpriteFrames.HasAnimation("Death_Animation"))
+        PlayerSprite.Play("Death_Animation");
+
+    GD.Print("Dimi has perished. Health set to 0.");
+}
+
+    public void TriggerRevive()
     {
-        if (!_isDead) return;
         _isDead = false;
         _isLanding = false;
+        _currentHealth = MaxHealth;
+        EmitSignal(SignalName.HealthChanged, _currentHealth);
+        _isInvincible = false;
+        PlayerSprite.Modulate = new Color(1, 1, 1, 1);
         PlayerSprite.Play("Idle_Animation");
     }
 }

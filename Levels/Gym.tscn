@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmc2vopq1xwak"]
+[gd_scene load_steps=11 format=3 uid="uid://cmc2vopq1xwak"]
 
 [ext_resource type="PackedScene" uid="uid://bwk6m2y1e5c8i" path="res://Entities/Player/Player.tscn" id="1_lijmk"]
 [ext_resource type="Script" uid="uid://d2ywheinskwo4" path="res://Levels/Gym.cs" id="1_rvmlp"]
 [ext_resource type="PackedScene" uid="uid://blhvec604b34v" path="res://Assets/Environment/Hazards/spike.tscn" id="3_v6co3"]
 [ext_resource type="PackedScene" uid="uid://cfg4ekc55d41v" path="res://Entities/Enemies/snitch_rat.tscn" id="4_1bmsn"]
+[ext_resource type="PackedScene" uid="uid://4negkirgouij" path="res://UI Elements/HUD.tscn" id="5_x7toh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lijmk"]
 distance = -320.0
@@ -117,4 +118,8 @@ position = Vector2(1600, 933)
 position = Vector2(896, 932)
 
 [node name="Snitch Rat5" parent="." instance=ExtResource("4_1bmsn")]
-position = Vector2(448, 933)
+position = Vector2(544, 928)
+
+[node name="Hud" parent="." instance=ExtResource("5_x7toh")]
+
+[connection signal="HealthChanged" from="Player" to="Hud" method="_on_player_health_changed"]

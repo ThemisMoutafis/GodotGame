@@ -3,15 +3,17 @@ using System;
 
 public partial class SnitchRat : CharacterBody2D
 {
+    [ExportGroup("Attack Settings")]
     [Export] public float MinDelay = 1.5f;
     [Export] public float MaxDelay = 4.0f;
-    [Export] public float AttackOffset = -50.0f; 
+    [Export] public float AttackOffset = -70.0f; 
+    [Export] public int BiteDamage = 20; // How much health Dimi loses per bite
 
     private AnimatedSprite2D _sprite;
     private CollisionShape2D _hitboxShape;
     private Timer _timer;
     private bool _playerInRange = false;
-    private bool _isFirstAttack = true; // Gatekeeper for the instant bite
+    private bool _isFirstAttack = true;
 
     public override void _Ready()
     {
@@ -23,27 +25,27 @@ public partial class SnitchRat : CharacterBody2D
         _timer.OneShot = true;
         _timer.Timeout += OnAttackTimerTimeout;
 
-        // Kill Logic
+        // --- UPDATED DAMAGE LOGIC ---
         GetNode<Area2D>("Hitbox").BodyEntered += (body) => {
-    if (body is Player dimi) 
-    {
-        // Calculate the difference between Dimi's feet and the Rat's top
-        float verticalDiff = dimi.GlobalPosition.Y - GlobalPosition.Y;
+            if (body is Player dimi) 
+            {
+                // verticalDiff > -10 ensures Dimi is not landing on the rat's back
+                float verticalDiff = dimi.GlobalPosition.Y - GlobalPosition.Y;
 
-        // If Dimi is significantly higher than the rat's center, he's 'on top'
-        if (verticalDiff > -10) // Adjust this number based on Rat height
-        {
-            dimi.TriggerDeath();
-        }
-    }
-};
+                if (verticalDiff > -10) 
+                {
+                    // Call the new Health API instead of instant death
+                    dimi.TakeDamage(BiteDamage);
+                }
+            }
+        };
 
         // Range Logic
         var trigger = GetNode<Area2D>("AttackTrigger");
         trigger.BodyEntered += (body) => {
             if (body is Player) {
                 _playerInRange = true;
-                DetermineNextAction(); // Decide: bite now or wait?
+                DetermineNextAction();
             }
         };
 
@@ -51,7 +53,7 @@ public partial class SnitchRat : CharacterBody2D
             if (body is Player) {
                 _playerInRange = false;
                 _timer.Stop();
-                _isFirstAttack = true; // Reset so the next approach is also instant
+                _isFirstAttack = true;
                 _sprite.Play("IdleRat");
             }
         };
@@ -63,12 +65,11 @@ public partial class SnitchRat : CharacterBody2D
 
         if (_isFirstAttack)
         {
-            _isFirstAttack = false; // Close the gate
-            PerformLounge();        // Strike immediately
+            _isFirstAttack = false;
+            PerformLounge();
         }
         else
         {
-            // Wait for a random interval before the next bite
             _timer.Start(GD.RandRange(MinDelay, MaxDelay));
         }
     }
@@ -80,17 +81,16 @@ public partial class SnitchRat : CharacterBody2D
 
     private async void PerformLounge()
     {
-        // 0% - Start Visuals
         _sprite.Play("AttackRat");
 
-        // Wind-up Delay (Telegraph)
+        // Wind-up (Telegraph)
         await ToSignal(GetTree().CreateTimer(0.2f), "timeout");
         if (!IsInstanceValid(this)) return;
 
         // Active Phase (Lethal)
         _hitboxShape.Position = new Vector2(AttackOffset, _hitboxShape.Position.Y);
         
-        // Active Duration (The 70% mark)
+        // Active Duration (70% mark)
         await ToSignal(GetTree().CreateTimer(0.4f), "timeout");
         if (!IsInstanceValid(this)) return;
 
@@ -103,7 +103,6 @@ public partial class SnitchRat : CharacterBody2D
 
         _sprite.Play("IdleRat");
 
-        // Loop: Check if we should queue the next random attack
         if (_playerInRange) DetermineNextAction();
     }
 }
