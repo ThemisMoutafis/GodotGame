@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=3 uid="uid://cfg4ekc55d41v"]
+[gd_scene load_steps=193 format=3 uid="uid://cfg4ekc55d41v"]
 
 [ext_resource type="Script" uid="uid://5e4isrvt1uf7" path="res://SnitchRat.cs" id="1_5baft"]
 [ext_resource type="Texture2D" uid="uid://cytfbaikmeolj" path="res://Assets/Enemies/Snitch Rat/Attack/Snitch rat attack_00000.png" id="2_5sw6f"]
@@ -47,68 +47,147 @@
 [ext_resource type="Texture2D" uid="uid://b84ysevye4wie" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00021.png" id="23_wv4uu"]
 [ext_resource type="Texture2D" uid="uid://do8q7r2ty27qn" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00022.png" id="24_5sw6f"]
 [ext_resource type="Texture2D" uid="uid://c5ym585asg4rv" path="res://Assets/Enemies/Snitch Rat/Attack/Snitch rat attack_00022.png" id="24_ncmf0"]
+[ext_resource type="Texture2D" uid="uid://cf3dso5cu7ui8" path="res://Assets/Enemies/Snitch Rat/Attack2/Snitch rat attack_00000.png" id="25_jhwl3"]
 [ext_resource type="Texture2D" uid="uid://cooxifwc2tdny" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00023.png" id="25_tnpbl"]
 [ext_resource type="Texture2D" uid="uid://bp8nseru6fy45" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00024.png" id="26_86ehv"]
+[ext_resource type="Texture2D" uid="uid://b17s8du4pvfni" path="res://Assets/Enemies/Snitch Rat/Attack2/Snitch rat attack_00001.png" id="26_ps1t4"]
 [ext_resource type="Texture2D" uid="uid://c8ys2myqcowmn" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00025.png" id="27_fguw4"]
+[ext_resource type="Texture2D" uid="uid://d130ts40fyav3" path="res://Assets/Enemies/Snitch Rat/Attack2/Snitch rat attack_00002.png" id="27_wex7n"]
+[ext_resource type="Texture2D" uid="uid://dqes8m8m0ypde" path="res://Assets/Enemies/Snitch Rat/Attack2/Snitch rat attack_00003.png" id="28_qt0ls"]
 [ext_resource type="Texture2D" uid="uid://dgrt8nt7psy5e" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00026.png" id="28_uiy7n"]
 [ext_resource type="Texture2D" uid="uid://r08pwp12f513" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00027.png" id="29_0uuot"]
+[ext_resource type="Texture2D" uid="uid://cmaaxw2c75il2" path="res://Assets/Enemies/Snitch Rat/Attack2/Snitch rat attack_00004.png" id="29_axxg0"]
+[ext_resource type="Texture2D" uid="uid://bt2y1gevfr781" path="res://Assets/Enemies/Snitch Rat/Attack2/Snitch rat attack_00005.png" id="30_5xsg4"]
 [ext_resource type="Texture2D" uid="uid://bnrtw8p6uh2l2" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00028.png" id="30_q2bvh"]
+[ext_resource type="Texture2D" uid="uid://benrh8jn4ibxg" path="res://Assets/Enemies/Snitch Rat/Attack2/Snitch rat attack_00006.png" id="31_02kee"]
 [ext_resource type="Texture2D" uid="uid://lpe5h08d6ggr" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00029.png" id="31_qajxs"]
+[ext_resource type="Texture2D" uid="uid://db6oi75d0d4p6" path="res://Assets/Enemies/Snitch Rat/Attack2/Snitch rat attack_00007.png" id="32_d0evr"]
 [ext_resource type="Texture2D" uid="uid://cc35wbyrh8l3y" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00030.png" id="32_nydnc"]
 [ext_resource type="Texture2D" uid="uid://badyut58vbmws" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00031.png" id="33_2ve0c"]
+[ext_resource type="Texture2D" uid="uid://c34m8p87utvwl" path="res://Assets/Enemies/Snitch Rat/Attack2/Snitch rat attack_00008.png" id="33_8w1ti"]
 [ext_resource type="Texture2D" uid="uid://bmand1a1ffvc3" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00032.png" id="34_0kptq"]
+[ext_resource type="Texture2D" uid="uid://c0pomd30en1h7" path="res://Assets/Enemies/Snitch Rat/Attack2/Snitch rat attack_00009.png" id="34_0yi2s"]
+[ext_resource type="Texture2D" uid="uid://dla1c76qn1mxk" path="res://Assets/Enemies/Snitch Rat/Attack2/Snitch rat attack_00010.png" id="35_eainq"]
 [ext_resource type="Texture2D" uid="uid://sx6jkt1pww2j" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00033.png" id="35_q6pho"]
 [ext_resource type="Texture2D" uid="uid://f0hcnkfdnnuc" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00034.png" id="36_4jtvx"]
+[ext_resource type="Texture2D" uid="uid://o5r5y14gq0g7" path="res://Assets/Enemies/Snitch Rat/Attack2/Snitch rat attack_00011.png" id="36_tporx"]
 [ext_resource type="Texture2D" uid="uid://v1il4ov6q8w6" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00035.png" id="37_36eq5"]
+[ext_resource type="Texture2D" uid="uid://db7kko8owr5wc" path="res://Assets/Enemies/Snitch Rat/Attack2/Snitch rat attack_00012.png" id="37_wy2qs"]
+[ext_resource type="Texture2D" uid="uid://b4k88xd5wqkge" path="res://Assets/Enemies/Snitch Rat/Attack2/Snitch rat attack_00013.png" id="38_15pcm"]
 [ext_resource type="Texture2D" uid="uid://cxmj6gi6ejud7" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00036.png" id="38_muei7"]
 [ext_resource type="Texture2D" uid="uid://ddrtn3fi3k4ry" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00037.png" id="39_a04f5"]
+[ext_resource type="Texture2D" uid="uid://b8edlgcutvrd4" path="res://Assets/Enemies/Snitch Rat/Attack2/Snitch rat attack_00014.png" id="39_dgjbn"]
+[ext_resource type="Texture2D" uid="uid://bjjnjh57px46n" path="res://Assets/Enemies/Snitch Rat/Attack2/Snitch rat attack_00015.png" id="40_1vh36"]
 [ext_resource type="Texture2D" uid="uid://bw184eoysu4u2" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00038.png" id="40_ism1p"]
 [ext_resource type="Texture2D" uid="uid://vxltgpsr2exq" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00039.png" id="41_bpj86"]
+[ext_resource type="Texture2D" uid="uid://bi52y84jr6pbt" path="res://Assets/Enemies/Snitch Rat/Attack2/Snitch rat attack_00016.png" id="41_fi1j7"]
 [ext_resource type="Texture2D" uid="uid://blx1vshnyp5jp" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00040.png" id="42_4kfs1"]
+[ext_resource type="Texture2D" uid="uid://nq7hs78l8fgh" path="res://Assets/Enemies/Snitch Rat/Attack2/Snitch rat attack_00017.png" id="42_vfhqw"]
 [ext_resource type="Texture2D" uid="uid://fr13aoa2wkli" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00041.png" id="43_ltgos"]
+[ext_resource type="Texture2D" uid="uid://bcqjj352xk1u5" path="res://Assets/Enemies/Snitch Rat/Attack2/Snitch rat attack_00018.png" id="43_yuhfn"]
 [ext_resource type="Texture2D" uid="uid://53fbf81ff8vv" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00042.png" id="44_gewrt"]
+[ext_resource type="Texture2D" uid="uid://eww0wss6sa53" path="res://Assets/Enemies/Snitch Rat/Attack2/Snitch rat attack_00019.png" id="44_jqs8h"]
 [ext_resource type="Texture2D" uid="uid://bwwobiobcheva" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00043.png" id="45_036x7"]
+[ext_resource type="Texture2D" uid="uid://d27ugfmwpqdy0" path="res://Assets/Enemies/Snitch Rat/Attack2/Snitch rat attack_00020.png" id="45_45p2c"]
+[ext_resource type="Texture2D" uid="uid://b58a4iyjoc3w4" path="res://Assets/Enemies/Snitch Rat/Attack2/Snitch rat attack_00021.png" id="46_15r43"]
 [ext_resource type="Texture2D" uid="uid://6re7wy26uvdd" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00044.png" id="46_ncmf0"]
 [ext_resource type="Texture2D" uid="uid://dlhqhu8dmqph5" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00045.png" id="47_5wb5t"]
+[ext_resource type="Texture2D" uid="uid://bxetaynfosx7n" path="res://Assets/Enemies/Snitch Rat/Attack2/Snitch rat attack_00022.png" id="47_dn42p"]
+[ext_resource type="Texture2D" uid="uid://dfmhseac0qvkw" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00000.png" id="48_0e3b7"]
 [ext_resource type="Texture2D" uid="uid://6nfu4cgl0etr" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00046.png" id="48_ks1ny"]
+[ext_resource type="Texture2D" uid="uid://bbdx3jsxkgbjl" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00001.png" id="49_3k0gi"]
 [ext_resource type="Texture2D" uid="uid://doo7p56h0qasi" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00047.png" id="49_yqa3h"]
+[ext_resource type="Texture2D" uid="uid://vo87igpjatsu" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00002.png" id="50_0v6vm"]
 [ext_resource type="Texture2D" uid="uid://6hnyo42clgrx" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00048.png" id="50_2v8rx"]
+[ext_resource type="Texture2D" uid="uid://d1j8dnbyho02p" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00003.png" id="51_062ap"]
 [ext_resource type="Texture2D" uid="uid://cximif3ajsm2w" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00049.png" id="51_qmv2t"]
 [ext_resource type="Texture2D" uid="uid://cvjklw7w1edgx" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00050.png" id="52_7at8f"]
+[ext_resource type="Texture2D" uid="uid://bdyajg3l56j0m" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00004.png" id="52_w67ya"]
+[ext_resource type="Texture2D" uid="uid://bg7st1vx4dkx0" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00005.png" id="53_1gi4p"]
 [ext_resource type="Texture2D" uid="uid://c4h4y6rq66h7e" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00051.png" id="53_blx1t"]
 [ext_resource type="Texture2D" uid="uid://bh3oya0g13b5p" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00052.png" id="54_m4mdu"]
+[ext_resource type="Texture2D" uid="uid://hxhk7n427se7" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00006.png" id="54_n5sst"]
 [ext_resource type="Texture2D" uid="uid://boacd847kwxs0" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00053.png" id="55_1lin1"]
+[ext_resource type="Texture2D" uid="uid://drv5xcogqjpal" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00007.png" id="55_vsmio"]
 [ext_resource type="Texture2D" uid="uid://b7v8kxafmsdua" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00054.png" id="56_hepnj"]
+[ext_resource type="Texture2D" uid="uid://ce1lxuebaemym" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00008.png" id="56_hih5k"]
+[ext_resource type="Texture2D" uid="uid://ca80akwbn75e7" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00009.png" id="57_48dyw"]
 [ext_resource type="Texture2D" uid="uid://bt2kjfelybum1" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00055.png" id="57_fkilg"]
 [ext_resource type="Texture2D" uid="uid://hqb4olekxecd" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00056.png" id="58_g4043"]
+[ext_resource type="Texture2D" uid="uid://dws82vk4pjkkw" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00010.png" id="58_ljwiu"]
+[ext_resource type="Texture2D" uid="uid://cb6ib3lprjhcd" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00011.png" id="59_5rj11"]
 [ext_resource type="Texture2D" uid="uid://c7h7c8ek60fj6" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00057.png" id="59_jhwl3"]
+[ext_resource type="Texture2D" uid="uid://b8x277sm6dfxi" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00012.png" id="60_1q164"]
 [ext_resource type="Texture2D" uid="uid://b6q1erohuu535" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00058.png" id="60_ps1t4"]
+[ext_resource type="Texture2D" uid="uid://dvrrnoiyp22e1" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00013.png" id="61_alufa"]
 [ext_resource type="Texture2D" uid="uid://b4hjbyxnwofwm" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00059.png" id="61_wex7n"]
+[ext_resource type="Texture2D" uid="uid://c6857tsxvrudx" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00014.png" id="62_lfi0c"]
 [ext_resource type="Texture2D" uid="uid://bcnd2uovha1t8" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00060.png" id="62_qt0ls"]
 [ext_resource type="Texture2D" uid="uid://bg5t2t2necfgd" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00061.png" id="63_axxg0"]
+[ext_resource type="Texture2D" uid="uid://dcyjl3wvly70e" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00015.png" id="63_myudn"]
+[ext_resource type="Texture2D" uid="uid://cuviuy8pqxmlu" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00016.png" id="64_2e18s"]
 [ext_resource type="Texture2D" uid="uid://cx681iq8t2pff" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00062.png" id="64_5xsg4"]
 [ext_resource type="Texture2D" uid="uid://dbhpengar36ad" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00063.png" id="65_02kee"]
+[ext_resource type="Texture2D" uid="uid://dkjx7hx0ngtd" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00017.png" id="65_4ptxj"]
+[ext_resource type="Texture2D" uid="uid://bpnh4gb0djbn8" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00018.png" id="66_2gjcb"]
 [ext_resource type="Texture2D" uid="uid://bjks1fby2m40d" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00064.png" id="66_d0evr"]
 [ext_resource type="Texture2D" uid="uid://b45437d2onshp" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00065.png" id="67_8w1ti"]
+[ext_resource type="Texture2D" uid="uid://c2qe8flp4qp3k" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00019.png" id="67_s10lt"]
 [ext_resource type="Texture2D" uid="uid://bqgm4j67q487n" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00066.png" id="68_0yi2s"]
+[ext_resource type="Texture2D" uid="uid://8pai7tt6hvop" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00020.png" id="68_1v8p5"]
+[ext_resource type="Texture2D" uid="uid://bjdg7721vsnv0" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00021.png" id="69_23wpi"]
 [ext_resource type="Texture2D" uid="uid://bnjvcckmcrtsj" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00067.png" id="69_eainq"]
+[ext_resource type="Texture2D" uid="uid://dqpl3pdthsecm" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00022.png" id="70_kswdu"]
 [ext_resource type="Texture2D" uid="uid://s3jhvkl33fpo" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00068.png" id="70_tporx"]
+[ext_resource type="Texture2D" uid="uid://c2iuaof2y7u3o" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00023.png" id="71_dlc7q"]
 [ext_resource type="Texture2D" uid="uid://bnjm38rdy2dxx" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00069.png" id="71_wy2qs"]
+[ext_resource type="Texture2D" uid="uid://gl5nmamx5fq5" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00024.png" id="72_8otgy"]
 [ext_resource type="Texture2D" uid="uid://d0y6kbmfivmid" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00070.png" id="72_15pcm"]
+[ext_resource type="Texture2D" uid="uid://cnybjqm1kjwbg" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00025.png" id="73_10qv8"]
 [ext_resource type="Texture2D" uid="uid://ci2lulfkb7qxq" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00071.png" id="73_dgjbn"]
 [ext_resource type="Texture2D" uid="uid://mi787u1jxltx" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00072.png" id="74_1vh36"]
+[ext_resource type="Texture2D" uid="uid://cgop6cmfvnme0" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00026.png" id="74_gx6qr"]
+[ext_resource type="Texture2D" uid="uid://c2xb5ixxacmkn" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00027.png" id="75_d80mc"]
 [ext_resource type="Texture2D" uid="uid://brfakdauxiwwb" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00073.png" id="75_fi1j7"]
+[ext_resource type="Texture2D" uid="uid://bxsccmpm2dfv2" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00028.png" id="76_02s5j"]
 [ext_resource type="Texture2D" uid="uid://diq0ovbdhhtnb" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00074.png" id="76_vfhqw"]
+[ext_resource type="Texture2D" uid="uid://b741q1g4ohrtx" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00029.png" id="77_jnsjc"]
 [ext_resource type="Texture2D" uid="uid://6ja0qa63ibr8" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00075.png" id="77_yuhfn"]
+[ext_resource type="Texture2D" uid="uid://dgfg57a4cfhg7" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00030.png" id="78_dugkw"]
 [ext_resource type="Texture2D" uid="uid://bc3kcwpohobcc" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00076.png" id="78_jqs8h"]
+[ext_resource type="Texture2D" uid="uid://cien2l3j4rt16" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00031.png" id="79_7ol82"]
 [ext_resource type="Texture2D" uid="uid://4xnijei3c61f" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00077.png" id="79_45p2c"]
 [ext_resource type="Texture2D" uid="uid://bpytg3ryw06sj" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00078.png" id="80_15r43"]
+[ext_resource type="Texture2D" uid="uid://dc7glp25u7swu" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00032.png" id="80_d4qwk"]
 [ext_resource type="Texture2D" uid="uid://c6swcwbccrhon" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00079.png" id="81_dn42p"]
+[ext_resource type="Texture2D" uid="uid://b3qm65erle74f" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00033.png" id="81_qlkub"]
 [ext_resource type="Texture2D" uid="uid://c42yj131qavyu" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00080.png" id="82_cr38e"]
+[ext_resource type="Texture2D" uid="uid://eo5g3cbvivbu" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00034.png" id="82_jktnv"]
 [ext_resource type="Texture2D" uid="uid://br73kngi5gpgw" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00081.png" id="83_6ifxe"]
+[ext_resource type="Texture2D" uid="uid://kd3d1f58ybmv" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00035.png" id="83_vegql"]
 [ext_resource type="Texture2D" uid="uid://cqkqmpohox8xx" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00082.png" id="84_7hs5r"]
+[ext_resource type="Texture2D" uid="uid://dbjdkk0rjw7le" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00036.png" id="84_t8x6e"]
 [ext_resource type="Texture2D" uid="uid://bl0xm2n83hbog" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00083.png" id="85_lwsis"]
+[ext_resource type="Texture2D" uid="uid://23mjds1tsq21" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00037.png" id="85_vkd04"]
 [ext_resource type="Texture2D" uid="uid://cmla2a23vaj04" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00084.png" id="86_fbu66"]
+[ext_resource type="Texture2D" uid="uid://cpybjpi66qsjy" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00038.png" id="86_kdge6"]
+[ext_resource type="Texture2D" uid="uid://ds7giff7vjwlx" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00039.png" id="87_bm260"]
+[ext_resource type="Texture2D" uid="uid://ddb4gvp6tipl1" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00040.png" id="88_8d6rf"]
+[ext_resource type="Texture2D" uid="uid://bgt45ur54u7pt" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00041.png" id="89_lksdh"]
+[ext_resource type="Texture2D" uid="uid://dlcb7q4xdjpdj" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00042.png" id="90_4yhfa"]
+[ext_resource type="Texture2D" uid="uid://c87dn5d2wc7nj" path="res://Assets/Enemies/Snitch Rat/Death/Snitch rat death_00043.png" id="91_tpkmi"]
+[ext_resource type="Texture2D" uid="uid://cdwbxytn175u5" path="res://Assets/Enemies/Snitch Rat/Run/Snitch rat run_00002.png" id="110_4jtvx"]
+[ext_resource type="Texture2D" uid="uid://q8vt3pr825r7" path="res://Assets/Enemies/Snitch Rat/Run/Snitch rat run_00003.png" id="111_36eq5"]
+[ext_resource type="Texture2D" uid="uid://bqlbw7pl5jnuj" path="res://Assets/Enemies/Snitch Rat/Run/Snitch rat run_00004.png" id="112_muei7"]
+[ext_resource type="Texture2D" uid="uid://n32e7ng8qbal" path="res://Assets/Enemies/Snitch Rat/Run/Snitch rat run_00005.png" id="113_a04f5"]
+[ext_resource type="Texture2D" uid="uid://c7m8pwcjo1ye" path="res://Assets/Enemies/Snitch Rat/Run/Snitch rat run_00006.png" id="114_ism1p"]
+[ext_resource type="Texture2D" uid="uid://dnq83wxbu2uel" path="res://Assets/Enemies/Snitch Rat/Run/Snitch rat run_00007.png" id="115_bpj86"]
+[ext_resource type="Texture2D" uid="uid://bquagwwxlgmjn" path="res://Assets/Enemies/Snitch Rat/Run/Snitch rat run_00008.png" id="116_4kfs1"]
+[ext_resource type="Texture2D" uid="uid://titkifqtxuek" path="res://Assets/Enemies/Snitch Rat/Run/Snitch rat run_00009.png" id="117_ltgos"]
+[ext_resource type="Texture2D" uid="uid://b0ykdl68kja80" path="res://Assets/Enemies/Snitch Rat/Run/Snitch rat run_00010.png" id="118_gewrt"]
+[ext_resource type="Texture2D" uid="uid://celeunpkltosr" path="res://Assets/Enemies/Snitch Rat/Run/Snitch rat run_00011.png" id="119_036x7"]
+[ext_resource type="Texture2D" uid="uid://bejek5jw6bek3" path="res://Assets/Enemies/Snitch Rat/Run/Snitch rat run_00012.png" id="120_ncmf0"]
+[ext_resource type="Texture2D" uid="uid://y4qwe66uow50" path="res://Assets/Enemies/Snitch Rat/Run/Snitch rat run_00013.png" id="121_5wb5t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uvkt7"]
 animations = [{
@@ -185,6 +264,217 @@ animations = [{
 "loop": false,
 "name": &"AttackRat",
 "speed": 22.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_jhwl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ps1t4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_wex7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_qt0ls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_axxg0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_5xsg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_02kee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_d0evr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_8w1ti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_0yi2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_eainq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_tporx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_wy2qs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_15pcm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_dgjbn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_1vh36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_fi1j7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_vfhqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_yuhfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_jqs8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_45p2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_15r43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_dn42p")
+}],
+"loop": false,
+"name": &"AttackRat2",
+"speed": 22.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("48_0e3b7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_3k0gi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_0v6vm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_062ap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_w67ya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_1gi4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_n5sst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_vsmio")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_hih5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_48dyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_ljwiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_5rj11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_1q164")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_alufa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_lfi0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_myudn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_2e18s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_4ptxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_2gjcb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_s10lt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_1v8p5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_23wpi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_kswdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_dlc7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_8otgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_10qv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_gx6qr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_d80mc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_02s5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_jnsjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_dugkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_7ol82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_d4qwk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_qlkub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_jktnv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_vegql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_t8x6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_vkd04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_kdge6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_bm260")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_8d6rf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_lksdh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_4yhfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_tpkmi")
+}],
+"loop": false,
+"name": &"DeathRat",
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -445,40 +735,88 @@ animations = [{
 "loop": true,
 "name": &"IdleRat",
 "speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("110_4jtvx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_36eq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_muei7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_a04f5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_ism1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_bpj86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_4kfs1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_ltgos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_gewrt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_036x7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_ncmf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_5wb5t")
+}],
+"loop": true,
+"name": &"RunRat",
+"speed": 15.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjoeb"]
-size = Vector2(114, 60)
+size = Vector2(114, 77)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bv4fj"]
-size = Vector2(42, 22)
+size = Vector2(236, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5sw6f"]
 size = Vector2(236.5, 2.5)
 
 [node name="Snitch Rat" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_5baft")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-15, -59.999996)
-scale = Vector2(0.33, 0.33)
+scale = Vector2(0.33, 0.32055554)
 sprite_frames = SubResource("SpriteFrames_uvkt7")
-animation = &"IdleRat"
+animation = &"DeathRat"
 autoplay = "IdleRat"
+frame = 14
+frame_progress = 0.7357107
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-13, 88)
+position = Vector2(0, 133.5)
 shape = SubResource("RectangleShape2D_xjoeb")
 
 [node name="Hitbox" type="Area2D" parent="."]
+position = Vector2(0, 125)
+collision_layer = 4
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(-81, 83)
 shape = SubResource("RectangleShape2D_bv4fj")
 
 [node name="AttackTrigger" type="Area2D" parent="."]
+position = Vector2(0, 125)
+collision_layer = 2
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackTrigger"]
-position = Vector2(-180, 72)
 shape = SubResource("RectangleShape2D_5sw6f")

@@ -102,9 +102,6 @@ position = Vector2(1344, 992)
 [node name="Spike3" parent="." instance=ExtResource("3_v6co3")]
 position = Vector2(1216, 896)
 
-[node name="Spike4" parent="." instance=ExtResource("3_v6co3")]
-position = Vector2(768, 992)
-
 [node name="Snitch Rat2" parent="." instance=ExtResource("4_1bmsn")]
 position = Vector2(1088, 773)
 

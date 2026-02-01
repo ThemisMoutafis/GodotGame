@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bn55h1jcok2vx" path="res://Spike.cs" id="1_u3iey"]
 
 [node name="Spike" type="Area2D"]
+collision_mask = 2
 script = ExtResource("1_u3iey")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
