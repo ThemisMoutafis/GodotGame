@@ -41,7 +41,8 @@ public partial class SnitchRat : CharacterBody2D
         _timer.OneShot = true;
         _timer.Timeout += () => { if (_playerInRange && !_isDead) PerformLounge(); };
 
-        _sprite.Play("RunRat");
+        // Initial animation state
+        _sprite.Play(IsPatrolling ? "RunRat" : "IdleRat");
 
         _sprite.AnimationFinished += () => {
             if (_sprite.Animation == "DeathRat") QueueFree();
@@ -70,9 +71,7 @@ public partial class SnitchRat : CharacterBody2D
     {
         if (_isDead) return;
 
-        // --- 💀 IMPROVED STOMP DETECTION ---
-        // 1. Check for "Resting" Pressure (Dimi standing still on head)
-        // We test a move 2 pixels UP. If we hit Dimi, he's on top.
+        // --- 💀 STOMP DETECTION ---
         var stompTest = MoveAndCollide(new Vector2(0, -2), true); 
         if (stompTest != null && stompTest.GetCollider() is Player standingDimi)
         {
@@ -89,10 +88,14 @@ public partial class SnitchRat : CharacterBody2D
         if (!IsOnFloor()) velocity.Y += GetGravity().Y * (float)delta;
         else velocity.Y = 0;
 
-        if (_playerInRange || _isAttacking) {
+        // --- MOVEMENT & IDLE LOGIC ---
+        if (_playerInRange || _isAttacking) 
+        {
             velocity.X = 0;
             if (!_isAttacking) FacePlayer(); 
-        } else {
+        } 
+        else if (IsPatrolling) // 🏃 Patrol Mode
+        {
             velocity.X = _direction * Speed;
             if (_flipCooldown <= 0) {
                 if (IsOnWall()) FlipDirection();
@@ -103,11 +106,18 @@ public partial class SnitchRat : CharacterBody2D
                 _sprite.Play("RunRat");
             }
         }
+        else // 🛑 Sentry Mode (Not Patrolling)
+        {
+            velocity.X = 0;
+            if (!_isAttacking && _sprite.Animation != "IdleRat") {
+                _sprite.Play("IdleRat");
+            }
+        }
 
         Velocity = velocity;
         MoveAndSlide();
 
-        // 2. Check for "Impact" Pressure (Dimi landing this frame)
+        // Impact detection
         for (int i = 0; i < GetSlideCollisionCount(); i++)
         {
             KinematicCollision2D collision = GetSlideCollision(i);
@@ -122,21 +132,17 @@ public partial class SnitchRat : CharacterBody2D
         }
     }
 
+    // (Die, FacePlayer, FlipDirection, and PerformLounge remain exactly the same)
     private void Die(Player dimi)
     {
         if (_isDead) return;
         _isDead = true;
-
-        GD.Print("Stomped!");
         _timer.Stop();
         _sprite.Stop();
         _sprite.Play("DeathRat");
-
         CollisionLayer = 0;
         CollisionMask = 0;
         _hitboxArea.Monitoring = false;
-
-        // Force the bounce on Dimi
         dimi.Velocity = new Vector2(dimi.Velocity.X, -400);
     }
 
@@ -160,32 +166,24 @@ public partial class SnitchRat : CharacterBody2D
 
     private async void PerformLounge() {
         if (_isAttacking || _isDead || !IsInstanceValid(this)) return;
-        
         _isAttacking = true;
         _hasDealtDamageThisAttack = false;
         FacePlayer(); 
-
         string attackAnim = (GD.Randi() % 2 == 0) ? "AttackRat" : "AttackRat2";
         _sprite.Stop(); 
         _sprite.Play(attackAnim);
-
         await ToSignal(GetTree().CreateTimer(0.2f), "timeout");
         if (!IsInstanceValid(this) || _isDead) return;
-
         _hitboxShape.Position = new Vector2(AttackOffset * _direction, 0);
         _hitboxArea.Monitoring = true;
-        
         await ToSignal(GetTree().CreateTimer(0.4f), "timeout");
         if (!IsInstanceValid(this) || _isDead) return;
-
         _hitboxArea.Monitoring = false;
         _hitboxShape.Position = Vector2.Zero;
-
         if (IsInstanceValid(_sprite) && !_isDead) {
             if (_sprite.Animation == "AttackRat" || _sprite.Animation == "AttackRat2")
                 await ToSignal(_sprite, "animation_finished");
         }
-        
         _isAttacking = false;
         if (_playerInRange && !_isDead) _timer.Start(GD.RandRange(MinDelay, MaxDelay));
     }

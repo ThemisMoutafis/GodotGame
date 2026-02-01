@@ -107,6 +107,7 @@ position = Vector2(1088, 773)
 
 [node name="Snitch Rat" parent="." instance=ExtResource("4_1bmsn")]
 position = Vector2(1472, 933)
+IsPatrolling = false
 
 [node name="Snitch Rat3" parent="." instance=ExtResource("4_1bmsn")]
 position = Vector2(1600, 933)
