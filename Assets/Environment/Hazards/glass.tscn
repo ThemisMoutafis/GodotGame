@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk6t6jq86njpm"]
+
+[ext_resource type="Script" uid="uid://bn55h1jcok2vx" path="res://Spike.cs" id="1_fdiu6"]
+[ext_resource type="Texture2D" uid="uid://bldjed3oywhi0" path="res://Assets/Icons/Glass.png" id="2_fdiu6"]
+
+[node name="Glass" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_fdiu6")
+
+[node name="Polygon2D" type="Sprite2D" parent="."]
+position = Vector2(35.000004, -10.000001)
+scale = Vector2(0.31521755, 0.2927351)
+texture = ExtResource("2_fdiu6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(37, -6)
+scale = Vector2(1.4374999, 1.4375)
+polygon = PackedVector2Array(-3.478262, -18.086956, -3.478262, -18.086956, -3.478262, -18.086956, -3.478262, -18.086956, 21, -18.087, 21, 9.5, -25.739134, 4.173913)

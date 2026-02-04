@@ -1,0 +1,149 @@
+[gd_scene load_steps=33 format=3 uid="uid://ba6ntwejj3uco"]
+
+[ext_resource type="Script" uid="uid://bn55h1jcok2vx" path="res://Spike.cs" id="1_l6rgp"]
+[ext_resource type="Texture2D" uid="uid://cww2aj7cfvacg" path="res://Assets/Enemies/Pooze/pooze_00000.png" id="2_fdr7a"]
+[ext_resource type="Texture2D" uid="uid://vp5d7jpjvysn" path="res://Assets/Enemies/Pooze/pooze_00001.png" id="3_nidal"]
+[ext_resource type="Texture2D" uid="uid://qug0entelob3" path="res://Assets/Enemies/Pooze/pooze_00002.png" id="4_yg7cb"]
+[ext_resource type="Texture2D" uid="uid://be7nber2imtcf" path="res://Assets/Enemies/Pooze/pooze_00003.png" id="5_xwjxc"]
+[ext_resource type="Texture2D" uid="uid://t4umx51cig1e" path="res://Assets/Enemies/Pooze/pooze_00004.png" id="6_1fj06"]
+[ext_resource type="Texture2D" uid="uid://ouw302lm4rif" path="res://Assets/Enemies/Pooze/pooze_00005.png" id="7_gq7mc"]
+[ext_resource type="Texture2D" uid="uid://citl8kf31t1l6" path="res://Assets/Enemies/Pooze/pooze_00006.png" id="8_drs6t"]
+[ext_resource type="Texture2D" uid="uid://ddxbsc75by4jc" path="res://Assets/Enemies/Pooze/pooze_00007.png" id="9_g6g48"]
+[ext_resource type="Texture2D" uid="uid://b41pdhlgvid2q" path="res://Assets/Enemies/Pooze/pooze_00008.png" id="10_cnaui"]
+[ext_resource type="Texture2D" uid="uid://bbxq8uv4a7npy" path="res://Assets/Enemies/Pooze/pooze_00009.png" id="11_23fdj"]
+[ext_resource type="Texture2D" uid="uid://c7cku56pkey6d" path="res://Assets/Enemies/Pooze/pooze_00010.png" id="12_xrqjw"]
+[ext_resource type="Texture2D" uid="uid://ripqecsh4gb3" path="res://Assets/Enemies/Pooze/pooze_00011.png" id="13_22xg6"]
+[ext_resource type="Texture2D" uid="uid://c0if2mbdabp8m" path="res://Assets/Enemies/Pooze/pooze_00012.png" id="14_vsj86"]
+[ext_resource type="Texture2D" uid="uid://cx7t4d0xbmnd8" path="res://Assets/Enemies/Pooze/pooze_00013.png" id="15_hdk1q"]
+[ext_resource type="Texture2D" uid="uid://kw88u1wko808" path="res://Assets/Enemies/Pooze/pooze_00014.png" id="16_635hh"]
+[ext_resource type="Texture2D" uid="uid://ld4x1p5sk55p" path="res://Assets/Enemies/Pooze/pooze_00015.png" id="17_cn6bm"]
+[ext_resource type="Texture2D" uid="uid://cs1bhj6e0r8s6" path="res://Assets/Enemies/Pooze/pooze_00016.png" id="18_esljk"]
+[ext_resource type="Texture2D" uid="uid://cl21j6h3quuj8" path="res://Assets/Enemies/Pooze/pooze_00017.png" id="19_32dny"]
+[ext_resource type="Texture2D" uid="uid://b0hkdd1dhujug" path="res://Assets/Enemies/Pooze/pooze_00018.png" id="20_6x5de"]
+[ext_resource type="Texture2D" uid="uid://dbsl53r2etjex" path="res://Assets/Enemies/Pooze/pooze_00019.png" id="21_rx1rb"]
+[ext_resource type="Texture2D" uid="uid://cx42n0djow3pu" path="res://Assets/Enemies/Pooze/pooze_00020.png" id="22_qjqwo"]
+[ext_resource type="Texture2D" uid="uid://b5eumc0xtrqyo" path="res://Assets/Enemies/Pooze/pooze_00021.png" id="23_6mq6h"]
+[ext_resource type="Texture2D" uid="uid://cfxrl7m71d7mx" path="res://Assets/Enemies/Pooze/pooze_00022.png" id="24_h1a3o"]
+[ext_resource type="Texture2D" uid="uid://c14gki3cxendn" path="res://Assets/Enemies/Pooze/pooze_00023.png" id="25_5ih8f"]
+[ext_resource type="Texture2D" uid="uid://c2uws1t6l7irc" path="res://Assets/Enemies/Pooze/pooze_00024.png" id="26_v1m7h"]
+[ext_resource type="Texture2D" uid="uid://dgpt7dn6ktq4l" path="res://Assets/Enemies/Pooze/pooze_00025.png" id="27_8evg4"]
+[ext_resource type="Texture2D" uid="uid://bsp1x2gou14w4" path="res://Assets/Enemies/Pooze/pooze_00026.png" id="28_6ahv3"]
+[ext_resource type="Texture2D" uid="uid://besfe3ckwwtko" path="res://Assets/Enemies/Pooze/pooze_00027.png" id="29_ugaei"]
+[ext_resource type="Texture2D" uid="uid://c7sce4wtnyvhf" path="res://Assets/Enemies/Pooze/pooze_00028.png" id="30_bb1s5"]
+[ext_resource type="Texture2D" uid="uid://d5wyugo7gx0c" path="res://Assets/Enemies/Pooze/pooze_00029.png" id="31_5drt0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rkbuf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fdr7a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nidal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yg7cb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xwjxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1fj06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gq7mc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_drs6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_g6g48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_cnaui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_23fdj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xrqjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_22xg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_vsj86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hdk1q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_635hh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_cn6bm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_esljk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_32dny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_6x5de")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_rx1rb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_qjqwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_6mq6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_h1a3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_5ih8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_v1m7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_8evg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_6ahv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ugaei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_bb1s5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_5drt0")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 13.0
+}]
+
+[node name="Pooze" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_l6rgp")
+
+[node name="Polygon2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(35.000004, -10.000001)
+scale = Vector2(0.31521755, 0.2927351)
+sprite_frames = SubResource("SpriteFrames_rkbuf")
+animation = &"Idle"
+autoplay = "Idle"
+frame = 14
+frame_progress = 0.3577918
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(32, -12)
+scale = Vector2(1.4374999, 1.4375)
+polygon = PackedVector2Array(22.261, 8.5, 29, 22.261, 22.260872, 22.26087, -22.260872, 22.26087, -22.261, 17, 0, 3)
