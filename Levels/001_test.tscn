@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=4 uid="uid://idvltyhc5qv3"]
+
+[ext_resource type="PackedScene" uid="uid://bwk6m2y1e5c8i" path="res://Entities/Player/Player.tscn" id="1_apgg0"]
+[ext_resource type="PackedScene" uid="uid://4negkirgouij" path="res://UI Elements/HUD.tscn" id="1_bfh1n"]
+[ext_resource type="PackedScene" uid="uid://cfg4ekc55d41v" path="res://Entities/Enemies/snitch_rat.tscn" id="2_bfh1n"]
+[ext_resource type="PackedScene" uid="uid://bk6t6jq86njpm" path="res://Assets/Environment/Hazards/glass.tscn" id="4_6g7y6"]
+[ext_resource type="PackedScene" uid="uid://ba6ntwejj3uco" path="res://Assets/Environment/Hazards/pooze.tscn" id="5_g86yq"]
+[ext_resource type="PackedScene" uid="uid://blhvec604b34v" path="res://Assets/Environment/Hazards/spike.tscn" id="6_l5lkv"]
+[ext_resource type="TileSet" uid="uid://e86qovtsoer4" path="res://Assets/Environment/Tiles/second tileset/secondtileset.tres" id="7_6g7y6"]
+
+[node name="001test" type="Node2D"]
+
+[node name="Hud" parent="." instance=ExtResource("1_bfh1n")]
+
+[node name="Player" parent="." instance=ExtResource("1_apgg0")]
+z_index = 1
+position = Vector2(32, 960)
+
+[node name="Snitch Rat" parent="." instance=ExtResource("2_bfh1n")]
+z_index = 1
+position = Vector2(544, 944)
+
+[node name="Glass" parent="." instance=ExtResource("4_6g7y6")]
+position = Vector2(704, 1024)
+
+[node name="Pooze" parent="." instance=ExtResource("5_g86yq")]
+z_index = 1
+position = Vector2(1339, 1038)
+
+[node name="Spike" parent="." instance=ExtResource("6_l5lkv")]
+position = Vector2(352, 1024)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAABAAAQAAAAMAAAABABAAAQAAAAMAAAACABAAAQAIAAMAAAADABAAAQAIAAMAAAAEABAAAQAIAAMAAAAFABAAAQAIAAMAAAAGABAAAQAIAAMAAAAHABAAAQAIAAMAAAAIABAAAQAIAAMAAAAJABAAAQAIAAMAAAAKABAAAQAIAAMAAAALABAAAQAIAAMAAAAMABAAAQAIAAMAAAANABAAAQAKAAEAAAANABEAAQAKAAIAAAANABIAAQAKAAMAAAAOABAAAQALAAEAAAAOABEAAQALAAIAAAAOABIAAQALAAMAAAAPABAAAQAMAAEAAAAPABEAAQAMAAIAAAAPABIAAQAMAAMAAAAQABAAAQAKAAEAAAAQABEAAQAKAAIAAAAQABIAAQAKAAMAAAARABAAAQALAAEAAAARABEAAQALAAIAAAARABIAAQALAAMAAAASABAAAQAMAAEAAAASABEAAQAMAAIAAAASABIAAQAMAAMAAAATABAAAQAKAAEAAAATABEAAQAKAAIAAAATABIAAQAKAAMAAAAUABAAAQALAAEAAAAUABEAAQALAAIAAAAUABIAAQALAAMAAAAVABAAAQAMAAEAAAAVABEAAQAMAAIAAAAVABIAAQAMAAMAAAAWABAAAQAKAAEAAAAWABEAAQAKAAIAAAAWABIAAQAKAAMAAAAXABAAAQALAAEAAAAXABEAAQALAAIAAAAXABIAAQALAAMAAAAYABAAAQAMAAEAAAAYABEAAQAMAAIAAAAYABIAAQAMAAMAAAAZABAAAQAKAAEAAAAZABEAAQAKAAIAAAAZABIAAQAKAAMAAAAaABAAAQALAAEAAAAaABEAAQALAAIAAAAaABIAAQALAAMAAAAbABAAAQAMAAEAAAAbABEAAQAMAAIAAAAbABIAAQAMAAMAAAAcABAAAQAKAAEAAAAcABEAAQAKAAIAAAAcABIAAQAKAAMAAAAdABAAAQALAAEAAAAdABEAAQALAAIAAAAdABIAAQALAAMAAAAeABAAAQAMAAEAAAAeABEAAQAMAAIAAAAeABIAAQAMAAMAAAA=")
+tile_set = ExtResource("7_6g7y6")
