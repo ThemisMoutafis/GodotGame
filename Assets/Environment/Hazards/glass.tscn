@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bk6t6jq86njpm"]
 
-[ext_resource type="Script" uid="uid://bn55h1jcok2vx" path="res://Spike.cs" id="1_fdiu6"]
+[ext_resource type="Script" uid="uid://bn55h1jcok2vx" path="res://Assets/Environment/Spike.cs" id="1_fdiu6"]
 [ext_resource type="Texture2D" uid="uid://bldjed3oywhi0" path="res://Assets/Icons/Glass.png" id="2_fdiu6"]
 
 [node name="Glass" type="Area2D"]

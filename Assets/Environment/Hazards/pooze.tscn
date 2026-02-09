@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://ba6ntwejj3uco"]
 
-[ext_resource type="Script" uid="uid://bn55h1jcok2vx" path="res://Spike.cs" id="1_l6rgp"]
+[ext_resource type="Script" uid="uid://bn55h1jcok2vx" path="res://Assets/Environment/Spike.cs" id="1_l6rgp"]
 [ext_resource type="Texture2D" uid="uid://cww2aj7cfvacg" path="res://Assets/Enemies/Pooze/pooze_00000.png" id="2_fdr7a"]
 [ext_resource type="Texture2D" uid="uid://vp5d7jpjvysn" path="res://Assets/Enemies/Pooze/pooze_00001.png" id="3_nidal"]
 [ext_resource type="Texture2D" uid="uid://qug0entelob3" path="res://Assets/Enemies/Pooze/pooze_00002.png" id="4_yg7cb"]

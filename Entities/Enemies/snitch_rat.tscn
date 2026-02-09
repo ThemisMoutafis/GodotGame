@@ -1,6 +1,6 @@
 [gd_scene load_steps=193 format=3 uid="uid://cfg4ekc55d41v"]
 
-[ext_resource type="Script" uid="uid://5e4isrvt1uf7" path="res://SnitchRat.cs" id="1_5baft"]
+[ext_resource type="Script" uid="uid://5e4isrvt1uf7" path="res://Entities/Enemies/SnitchRat.cs" id="1_5baft"]
 [ext_resource type="Texture2D" uid="uid://cytfbaikmeolj" path="res://Assets/Enemies/Snitch Rat/Attack/Snitch rat attack_00000.png" id="2_5sw6f"]
 [ext_resource type="Texture2D" uid="uid://brotwue6s2ac5" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00000.png" id="2_pfw3d"]
 [ext_resource type="Texture2D" uid="uid://makamngidu7w" path="res://Assets/Enemies/Snitch Rat/Idle/Snitch rat idle_00001.png" id="3_ro7xj"]
