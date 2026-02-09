@@ -15,6 +15,10 @@ run/main_scene="uid://cmc2vopq1xwak"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="uid://5rkvdd61t5xh"
 
+[autoload]
+
+GlobalPause="*res://global_pause.tscn"
+
 [display]
 
 window/size/viewport_width=1920
@@ -22,7 +26,7 @@ window/size/viewport_height=1080
 window/size/mode=3
 window/size/window_width_override=1280
 window/size/window_height_override=720
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 
 [dotnet]
 
@@ -41,3 +45,9 @@ run={
 2d_physics/layer_1="World"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Enemies"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true

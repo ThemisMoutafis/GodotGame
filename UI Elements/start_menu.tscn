@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://h5ecgoq6hvgb" path="res://UI Elements/StartMenu.cs" id="1_jwbto"]
 
-[node name="StartMenu" type="CanvasLayer"]
+[node name="start_menu" type="CanvasLayer"]
 script = ExtResource("1_jwbto")
 
 [node name="ColorRect" type="ColorRect" parent="."]

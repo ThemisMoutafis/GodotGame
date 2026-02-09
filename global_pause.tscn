@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvecd57sqg7s3"]
+
+[ext_resource type="Script" uid="uid://cf12e6imm4myh" path="res://GlobalPause.cs" id="1_s3nhp"]
+
+[node name="GlobalPause" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_s3nhp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5019608)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="RESUME" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SETTINGS" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="WINDOW MODE" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="QUIT TO MENU" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
