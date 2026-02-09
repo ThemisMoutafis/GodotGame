@@ -14,14 +14,14 @@ public partial class Gym : Node2D
 	}
 	public override void _Input(InputEvent @event)
 {
-    if (@event.IsActionPressed("ui_cancel")) // Usually the 'Esc' key
-    {
-        // Toggle between Fullscreen and Windowed
-        var mode = DisplayServer.WindowGetMode();
-        if (mode == DisplayServer.WindowMode.Fullscreen)
-            DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
-        else
-            DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
-    }
+	if (@event.IsActionPressed("ui_cancel")) // Usually the 'Esc' key
+	{
+		// Toggle between Fullscreen and Windowed
+		var mode = DisplayServer.WindowGetMode();
+		if (mode == DisplayServer.WindowMode.Fullscreen)
+			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
+		else
+			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
+	}
 }
 }
