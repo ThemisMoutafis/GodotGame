@@ -15,7 +15,7 @@ public partial class Hud : CanvasLayer
     {
         GD.Print("HUD: _Ready is starting...");
         
-        _healthBar = GetNodeOrNull<TextureProgressBar>("TextureProgressBar");
+        _healthBar = GetNode<TextureProgressBar>("SilverFrame/HealthBar");
         
         if (_healthBar != null)
         {

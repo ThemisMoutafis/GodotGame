@@ -81,7 +81,7 @@ public partial class GlobalPause : CanvasLayer
         if (labelBaseName == "WINDOW MODE")
         {
             var currentMode = DisplayServer.WindowGetMode();
-            displayText = currentMode == DisplayServer.WindowMode.Fullscreen ? "MODE: FULLSCREEN" : "MODE: WINDOWED";
+            displayText = currentMode == DisplayServer.WindowMode.Fullscreen ? "MODE: WINDOWED" : "MODE: FULLSCREEN";
         }
 
         if (i == _selectedIndex)

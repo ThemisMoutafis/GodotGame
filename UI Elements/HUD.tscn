@@ -1,28 +1,42 @@
 [gd_scene load_steps=5 format=3 uid="uid://4negkirgouij"]
 
 [ext_resource type="Script" uid="uid://cgvc2lqodtk88" path="res://UI Elements/Hud.cs" id="1_7h7hr"]
+[ext_resource type="Texture2D" uid="uid://dnc6yp1tnrfc8" path="res://Assets/Healthbar/Healthbar.png" id="2_idkyl"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7h7hr"]
-size = Vector2(300, 50)
+[sub_resource type="Gradient" id="Gradient_idkyl"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_idkyl"]
-size = Vector2(300, 50)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_i8gyb"]
-size = Vector2(300, 50)
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_i8gyb"]
+gradient = SubResource("Gradient_idkyl")
+use_hdr = true
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0.6433121, 0)
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_7h7hr")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-custom_minimum_size = Vector2(300, 50)
-offset_left = 30.0
-offset_top = 30.0
-offset_right = 330.0
-offset_bottom = 80.0
-texture_under = SubResource("PlaceholderTexture2D_7h7hr")
-texture_over = SubResource("PlaceholderTexture2D_idkyl")
-texture_progress = SubResource("PlaceholderTexture2D_i8gyb")
-tint_under = Color(0, 0, 0, 1)
-tint_over = Color(1, 1, 1, 0)
-tint_progress = Color(0.7461049, 0, 0.026228564, 0.98039216)
+[node name="SilverFrame" type="TextureRect" parent="."]
+offset_right = 410.0
+offset_bottom = 128.0
+texture = ExtResource("2_idkyl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HealthBar" type="TextureProgressBar" parent="SilverFrame"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48536587
+anchor_top = 0.640625
+anchor_right = 1.190244
+anchor_bottom = 1.15625
+offset_left = -97.0
+offset_top = -19.0
+offset_right = -97.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 100.0
+nine_patch_stretch = true
+texture_progress = SubResource("GradientTexture2D_i8gyb")
+tint_under = Color(0, 0, 0, 0)
+tint_progress = Color(0.9647885, 0.0008066714, 0.15420863, 0.98039216)
+metadata/_edit_use_anchors_ = true
