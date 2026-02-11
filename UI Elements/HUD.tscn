@@ -15,8 +15,10 @@ fill_to = Vector2(0.6433121, 0)
 script = ExtResource("1_7h7hr")
 
 [node name="SilverFrame" type="TextureRect" parent="."]
-offset_right = 410.0
-offset_bottom = 128.0
+offset_left = 75.0
+offset_top = 75.0
+offset_right = 485.0
+offset_bottom = 203.0
 texture = ExtResource("2_idkyl")
 expand_mode = 1
 stretch_mode = 5
