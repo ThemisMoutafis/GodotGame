@@ -989,23 +989,33 @@ animations = [{
 "speed": 42.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ww0jn"]
-size = Vector2(60, 127)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0hr5b"]
+radius = 30.0
+height = 130.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("PlayerSprite") groups=["Player"]]
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_ww0jn")
+FallAnimationDelay = 0.6
+EnemyBounceForce = -200.0
 PlayerSprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(8, -1)
 scale = Vector2(0.11875927, 0.11962952)
 sprite_frames = SubResource("SpriteFrames_80tt4")
-animation = &"DoubleJump_Fall"
+animation = &"DoubleJump_Apex"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 0)
-shape = SubResource("RectangleShape2D_ww0jn")
+shape = SubResource("CapsuleShape2D_0hr5b")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="DebugStateLabel" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = -21.0
+offset_top = -88.0
+offset_right = 19.0
+offset_bottom = -65.0
