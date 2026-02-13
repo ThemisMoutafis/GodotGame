@@ -1,8 +1,22 @@
-[gd_scene load_steps=4 format=4 uid="uid://f5606vihcqv"]
+[gd_scene load_steps=5 format=4 uid="uid://f5606vihcqv"]
 
 [ext_resource type="PackedScene" uid="uid://4negkirgouij" path="res://UI Elements/HUD.tscn" id="1_fqyxc"]
 [ext_resource type="TileSet" uid="uid://brgjf8b5lp2vb" path="res://Levels/Tileset/Sewers.tres" id="2_agbao"]
 [ext_resource type="PackedScene" uid="uid://bwk6m2y1e5c8i" path="res://Entities/Player/Player.tscn" id="3_gkglm"]
+
+[sub_resource type="Environment" id="Environment_fqyxc"]
+background_mode = 3
+background_canvas_max_layer = 1
+ambient_light_energy = 1.69
+tonemap_mode = 2
+tonemap_exposure = 0.05
+tonemap_white = 7.8
+glow_enabled = true
+glow_levels/4 = 1.0
+glow_levels/5 = 1.75
+glow_intensity = 2.47
+glow_strength = 1.4
+glow_blend_mode = 0
 
 [node name="Node2D" type="Node2D"]
 
@@ -22,3 +36,6 @@ tile_set = ExtResource("2_agbao")
 
 [node name="Player" parent="." instance=ExtResource("3_gkglm")]
 position = Vector2(-149, -1183)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fqyxc")

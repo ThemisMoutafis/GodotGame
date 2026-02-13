@@ -1,4 +1,4 @@
-[gd_scene load_steps=233 format=3 uid="uid://bwk6m2y1e5c8i"]
+[gd_scene load_steps=235 format=3 uid="uid://bwk6m2y1e5c8i"]
 
 [ext_resource type="Script" uid="uid://uhktpy1peuks" path="res://Entities/Player/Player.cs" id="1_ww0jn"]
 [ext_resource type="Texture2D" uid="uid://dvbg87ishnfa6" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00000.png" id="2_elj48"]
@@ -993,6 +993,17 @@ animations = [{
 radius = 30.0
 height = 130.0
 
+[sub_resource type="Gradient" id="Gradient_0hr5b"]
+offsets = PackedFloat32Array(0.00952381, 0.057142857, 0.74285716)
+colors = PackedColorArray(1.0705293, 1.0705293, 1.0705293, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yionb"]
+gradient = SubResource("Gradient_0hr5b")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.4852071, 0.4852071)
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("PlayerSprite") groups=["Player"]]
 collision_layer = 2
 collision_mask = 7
@@ -1002,6 +1013,7 @@ EnemyBounceForce = -200.0
 PlayerSprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 2
 position = Vector2(8, -1)
 scale = Vector2(0.11875927, 0.11962952)
 sprite_frames = SubResource("SpriteFrames_80tt4")
@@ -1019,3 +1031,13 @@ offset_left = -21.0
 offset_top = -88.0
 offset_right = 19.0
 offset_bottom = -65.0
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(9, -6.000004)
+scale = Vector2(2, 2)
+color = Color(1, 1, 0.6509804, 0.6313726)
+energy = 1.2
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.7882353)
+texture = SubResource("GradientTexture2D_yionb")
+height = 26.0
