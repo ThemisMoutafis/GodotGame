@@ -1009,7 +1009,6 @@ collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_ww0jn")
 FallAnimationDelay = 0.6
-EnemyBounceForce = -200.0
 PlayerSprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
@@ -1035,8 +1034,8 @@ offset_bottom = -65.0
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(9, -6.000004)
 scale = Vector2(2, 2)
-color = Color(1, 1, 0.6509804, 0.6313726)
-energy = 1.2
+color = Color(0.85882354, 0.53333336, 0.2, 0.3647059)
+energy = 2.8
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 0.7882353)
 texture = SubResource("GradientTexture2D_yionb")
