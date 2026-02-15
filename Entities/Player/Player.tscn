@@ -1034,7 +1034,7 @@ offset_bottom = -65.0
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(9, -6.000004)
 scale = Vector2(2, 2)
-color = Color(0.85882354, 0.53333336, 0.2, 0.3647059)
+color = Color(0.38039216, 0.61960787, 0.9843137, 0.25490198)
 energy = 2.8
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 0.7882353)
