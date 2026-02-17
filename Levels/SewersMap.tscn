@@ -7,23 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cfg4ekc55d41v" path="res://Entities/Enemies/snitch_rat.tscn" id="5_gkglm"]
 [ext_resource type="PackedScene" uid="uid://bpm156117kjxa" path="res://Entities/Objects/lamp_object.tscn" id="6_671x1"]
 
-[sub_resource type="Environment" id="Environment_agbao"]
-background_mode = 3
-background_canvas_max_layer = 1
-ambient_light_energy = 1.69
-tonemap_mode = 2
-tonemap_exposure = 0.05
-tonemap_white = 7.8
-glow_enabled = true
-glow_levels/3 = 0.0
-glow_levels/4 = 2.0
-glow_levels/5 = 1.25
-glow_levels/6 = 3.5
-glow_intensity = 1.4
-glow_strength = 0.42
-glow_blend_mode = 0
-fog_enabled = true
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gkglm"]
 texture = ExtResource("4_agbao")
 texture_region_size = Vector2i(64, 64)
@@ -48,13 +31,23 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_gkglm")
 
+[sub_resource type="Environment" id="Environment_agbao"]
+background_mode = 3
+ambient_light_energy = 1.69
+tonemap_mode = 2
+tonemap_exposure = 0.05
+tonemap_white = 7.8
+glow_enabled = true
+glow_levels/3 = 0.0
+glow_levels/4 = 2.0
+glow_levels/5 = 1.25
+glow_levels/6 = 3.5
+glow_intensity = 1.4
+glow_strength = 0.42
+glow_blend_mode = 0
+fog_enabled = true
+
 [node name="Node2D" type="Node2D"]
-
-[node name="Hud" parent="." instance=ExtResource("1_fqyxc")]
-layer = 111
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_agbao")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -74,8 +67,7 @@ position = Vector2(-149, -1183)
 
 [node name="ParallaxBG" type="Parallax2D" parent="."]
 z_index = -100
-scroll_scale = Vector2(0.9, 1)
-scroll_offset = Vector2(0.5, 0)
+scroll_scale = Vector2(0.5, 1)
 
 [node name="Background" type="TileMapLayer" parent="ParallaxBG"]
 z_index = -100
@@ -102,3 +94,9 @@ position = Vector2(-271, 493)
 
 [node name="LampObject" parent="." instance=ExtResource("6_671x1")]
 position = Vector2(903.00006, -83)
+
+[node name="Hud" parent="." instance=ExtResource("1_fqyxc")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+process_priority = 1
+environment = SubResource("Environment_agbao")
