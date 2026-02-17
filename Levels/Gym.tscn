@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmc2vopq1xwak"]
+[gd_scene load_steps=15 format=3 uid="uid://cmc2vopq1xwak"]
 
 [ext_resource type="PackedScene" uid="uid://bwk6m2y1e5c8i" path="res://Entities/Player/Player.tscn" id="1_lijmk"]
 [ext_resource type="Script" uid="uid://d2ywheinskwo4" path="res://Levels/Gym.cs" id="1_rvmlp"]
@@ -23,6 +23,22 @@ size = Vector2(96, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7toh"]
 size = Vector2(64, 64)
+
+[sub_resource type="Environment" id="Environment_oarks"]
+background_mode = 3
+ambient_light_energy = 1.69
+tonemap_mode = 2
+tonemap_exposure = 0.05
+tonemap_white = 7.8
+glow_enabled = true
+glow_levels/3 = 0.0
+glow_levels/4 = 2.0
+glow_levels/5 = 1.25
+glow_levels/6 = 3.5
+glow_intensity = 1.4
+glow_strength = 0.42
+glow_blend_mode = 0
+fog_enabled = true
 
 [node name="Gym" type="Node2D"]
 script = ExtResource("1_rvmlp")
@@ -147,5 +163,9 @@ position = Vector2(925, 922)
 
 [node name="TileMap" type="TileMapLayer" parent="."]
 tile_set = ExtResource("8_oarks")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="TileMap"]
+process_priority = 1
+environment = SubResource("Environment_oarks")
 
 [connection signal="HealthChanged" from="Player" to="Hud" method="_on_player_health_changed"]
