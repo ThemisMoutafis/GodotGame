@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://4negkirgouij"]
+[gd_scene load_steps=6 format=3 uid="uid://4negkirgouij"]
 
 [ext_resource type="Script" uid="uid://cgvc2lqodtk88" path="res://UI Elements/Hud.cs" id="1_7h7hr"]
 [ext_resource type="Texture2D" uid="uid://dnc6yp1tnrfc8" path="res://Assets/Healthbar/Healthbar.png" id="2_idkyl"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_idkyl"]
+light_mode = 1
 
 [sub_resource type="Gradient" id="Gradient_idkyl"]
 
@@ -15,6 +18,7 @@ fill_to = Vector2(0.6433121, 0)
 script = ExtResource("1_7h7hr")
 
 [node name="SilverFrame" type="TextureRect" parent="."]
+material = SubResource("CanvasItemMaterial_idkyl")
 offset_left = 75.0
 offset_top = 75.0
 offset_right = 485.0
