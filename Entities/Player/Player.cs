@@ -23,6 +23,8 @@ public partial class Player : CharacterBody2D
     [Export] public float FallGravityMultiplier = 2.5f;
     [Export] public float LandingThreshold = 500.0f;
 
+    public bool HasLamp = false;
+
     [ExportGroup("Health System")]
     [Export] public int MaxHealth = 100;
     [Export] public float IFrameDuration = 0.8f; 
@@ -69,7 +71,8 @@ public partial class Player : CharacterBody2D
     [Signal] public delegate void HealthChangedEventHandler(int newHealth);
 
     public override void _Ready()
-    {
+    {   
+        AddToGroup("Player");
         _debugLabel = GetNodeOrNull<Label>("%DebugStateLabel");
         _currentHealth = MaxHealth;
         _childCamera = GetNodeOrNull<Camera2D>("Camera2D");
@@ -198,6 +201,8 @@ public partial class Player : CharacterBody2D
         {
             _debugLabel.Text = $"State: {GetCurrentState()}\nVel: {Velocity.X:F0}, {Velocity.Y:F0}";
         }
+
+        HandleLampLight();
     }
 
     private void HandleAirPhysics(ref Vector2 velocity, float gravity, float delta)
@@ -290,6 +295,13 @@ public partial class Player : CharacterBody2D
 
     private void HandleAnimations(Vector2 velocity)
     {
+        if (HasLamp) 
+{
+    // Find Dimi's PointLight2D and enable it
+    var dimiLight = GetNodeOrNull<PointLight2D>("PointLight2D");
+    if (dimiLight != null && !dimiLight.Enabled) dimiLight.Enabled = true;
+}
+
         if (PlayerSprite == null || _isDead || _isHurt) return; 
 
         if (IsOnFloor())
@@ -423,4 +435,16 @@ public partial class Player : CharacterBody2D
             _debugLabel.Text = $"State: {GetCurrentState()}\nVel: {Velocity.X:F0}, {Velocity.Y:F0}";
         }
     }
+
+    private void HandleLampLight()
+{
+    // Find the light child node
+    var lamp = GetNodeOrNull<PointLight2D>("DimisLamp");
+    
+    if (lamp != null)
+    {
+        // The light's enabled state should ALWAYS match the boolean
+        lamp.Enabled = HasLamp;
+    }
+}
 }

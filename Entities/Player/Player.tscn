@@ -1,4 +1,4 @@
-[gd_scene load_steps=235 format=3 uid="uid://bwk6m2y1e5c8i"]
+[gd_scene load_steps=236 format=3 uid="uid://bwk6m2y1e5c8i"]
 
 [ext_resource type="Script" uid="uid://uhktpy1peuks" path="res://Entities/Player/Player.cs" id="1_ww0jn"]
 [ext_resource type="Texture2D" uid="uid://dvbg87ishnfa6" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00000.png" id="2_elj48"]
@@ -230,6 +230,7 @@
 [ext_resource type="Texture2D" uid="uid://di6i0k5uao2b1" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00019.png" id="214_trx0m"]
 [ext_resource type="Texture2D" uid="uid://procb8saapyv" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00020.png" id="215_7fmqd"]
 [ext_resource type="Texture2D" uid="uid://dqhvrt851wq37" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00021.png" id="216_l3kyt"]
+[ext_resource type="Script" uid="uid://d3yt31qsy2h7m" path="res://Entities/Player/LanternFlicker.cs" id="231_yionb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_80tt4"]
 animations = [{
@@ -1005,6 +1006,7 @@ fill = 1
 fill_from = Vector2(0.4852071, 0.4852071)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("PlayerSprite") groups=["Player"]]
+z_index = 1
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_ww0jn")
@@ -1031,12 +1033,14 @@ offset_top = -88.0
 offset_right = 19.0
 offset_bottom = -65.0
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="DimisLamp" type="PointLight2D" parent="."]
 position = Vector2(9, -6.000004)
 scale = Vector2(2, 2)
+enabled = false
 color = Color(0.38039216, 0.61960787, 0.9843137, 0.25490198)
 energy = 2.8
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 0.7882353)
 texture = SubResource("GradientTexture2D_yionb")
 height = 26.0
+script = ExtResource("231_yionb")

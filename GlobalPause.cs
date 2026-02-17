@@ -11,8 +11,9 @@ public partial class GlobalPause : CanvasLayer
     public override void _Ready()
     {
         // Hide the menu at the start
-        Visible = false;
 
+        Visible = false;
+        Layer = 100;
         var vbox = GetNode<VBoxContainer>("CenterContainer/VBoxContainer");
         foreach (Node child in vbox.GetChildren())
         {
