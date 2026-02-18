@@ -9,6 +9,9 @@ public partial class LampObject : Node2D
     public override void _Ready()
     {
         // Connect signals
+        var label = GetNode<Label>("InteractionLabel");
+        label.Visible = false;
+        label.Text = "An ancient oil lamp. Smells earthy with a tinge of... burnt hair?\nPress S to pick up!";
         var area = GetNode<Area2D>("InteractionArea");
         area.BodyEntered += OnBodyEntered;
         area.BodyExited += OnBodyExited;
@@ -46,9 +49,10 @@ public partial class LampObject : Node2D
 
     private void OnBodyEntered(Node2D body)
 {
-    if (body.IsInGroup("Player")) 
+    if (body.IsInGroup("Player")&& !_isTaken) 
     {
         _playerInside = true;
+        GetNode<Label>("InteractionLabel").Visible = true;
         GD.Print("Dimi is on the lamp!"); // If this doesn't show up, detection is broken
     }
 }
@@ -56,5 +60,6 @@ public partial class LampObject : Node2D
     private void OnBodyExited(Node2D body)
     {
         if (body.IsInGroup("Player")) _playerInside = false;
+        GetNode<Label>("InteractionLabel").Visible = false;
     }
 }

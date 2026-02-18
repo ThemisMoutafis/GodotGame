@@ -574,7 +574,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(9.5, 217)
+position = Vector2(9.5, 217.00002)
 shape = SubResource("RectangleShape2D_623nr")
 
 [node name="LampSprite" type="AnimatedSprite2D" parent="."]
@@ -593,3 +593,14 @@ shadow_enabled = true
 shadow_color = Color(0, 0, 0, 0.7882353)
 texture = SubResource("GradientTexture2D_pxacn")
 height = 26.0
+
+[node name="InteractionLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(1000, -800)
+layout_direction = 1
+offset_left = -1153.3333
+offset_top = -626.6666
+offset_right = 406.66663
+offset_bottom = -333.3333
+theme_override_font_sizes/font_size = 78
+horizontal_alignment = 1
+vertical_alignment = 1
