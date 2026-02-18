@@ -66,6 +66,8 @@ public partial class Player : CharacterBody2D
     private float _floatTimer = 0f;
     private Camera2D _childCamera;
     private bool _isRunning = false;
+    private bool _isInteracting = false;
+    private bool _isInteractLocked = false;
 
     private Label _debugLabel;   
     [Signal] public delegate void HealthChangedEventHandler(int newHealth);
@@ -80,7 +82,8 @@ public partial class Player : CharacterBody2D
     }
 
     public override void _PhysicsProcess(double delta)
-    {
+    {   
+        if (Input.IsKeyPressed(Key.S)) PlayerInteract();
         if (Input.IsKeyPressed(Key.Key1)) TakeDamage(20);
         if (Input.IsKeyPressed(Key.Key2)) TriggerRevive();
 
@@ -205,6 +208,7 @@ public partial class Player : CharacterBody2D
         HandleLampLight();
     }
 
+
     private void HandleAirPhysics(ref Vector2 velocity, float gravity, float delta)
     {
         if (_jumpCount == MaxJumps && !_hasFloatedThisJump && Mathf.Abs(velocity.Y) < ApexTriggerRange && !IsOnCeiling())
@@ -239,6 +243,16 @@ public partial class Player : CharacterBody2D
 
     private void HandleHorizontalMovement(ref Vector2 velocity, float delta)
     {
+
+            if (_isInteracting)
+        {
+            // Option A: Instant stop
+            // velocity.X = 0; 
+
+            // Option B: Smooth friction (looks more natural)
+            velocity.X = Mathf.MoveToward(velocity.X, 0, Acceleration);
+            return; 
+        }
         Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 
         if (_isLanding)
@@ -268,6 +282,7 @@ public partial class Player : CharacterBody2D
             float targetZoom = (_isRunning && Mathf.Abs(velocity.X) > WalkSpeed) ? RunZoomAmount : 1.0f;
             _childCamera.Zoom = _childCamera.Zoom.Lerp(new Vector2(targetZoom, targetZoom), 0.1f);
         }
+        
     }
 
     private void HandleJumpInput(ref Vector2 velocity)
@@ -309,7 +324,8 @@ public partial class Player : CharacterBody2D
             _isDoubleJumpStarting = false;
             _isApexLocked = false;
             _fallCounter = 0f;
-            
+        if (!_isInteracting)
+        {    
             if (Mathf.Abs(velocity.X) < 5.0f && !_isLanding)
                 PlayerSprite.Play("Idle_Animation");
             else if (!_isLanding)
@@ -317,6 +333,7 @@ public partial class Player : CharacterBody2D
                 string nextAnim = (Mathf.Abs(velocity.X) > WalkSpeed + 50.0f) ? "Sprint" : "Run";
                 PlayerSprite.Play(nextAnim);
             }
+        }
         }
         else // Airborne
         {
@@ -340,6 +357,7 @@ public partial class Player : CharacterBody2D
                 }
             }
         }
+        
     }
 
     private void HandleDeathState(double delta, float gravity)
@@ -354,6 +372,7 @@ public partial class Player : CharacterBody2D
     {
         if (PlayerSprite.Animation == "Land" || PlayerSprite.Animation == "DoubleJump_Land") _isLanding = false;
         if (PlayerSprite.Animation == "DoubleJump_Rise") _isDoubleJumpStarting = false;
+        _isInteracting = false;
     }
 
     private string GetCurrentState()
@@ -361,6 +380,7 @@ public partial class Player : CharacterBody2D
         if (_isDead) return "DEAD";
         if (_isHurt) return "HURT";
         if (_isLanding) return "LANDING";
+        if (_isInteracting) return "INTERACTING";
         if (!IsOnFloor())
         {
             if (_isApexLocked) return "APEX_FLOAT";
@@ -421,6 +441,13 @@ public partial class Player : CharacterBody2D
         PlayerSprite.Play("Death_Animation");
     }
 
+    public void PlayerInteract()
+    {
+        if (_isInteracting || _isInteractLocked) return;
+        _isInteracting = true;
+        PlayerSprite.Play("Interact");
+        // Interaction logic would go here (e.g., checking for nearby interactables)
+    }
     public void TriggerRevive()
     {
         _isDead = false; _isLanding = false; _isHurt = false; _currentHealth = MaxHealth;

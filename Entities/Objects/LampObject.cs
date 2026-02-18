@@ -23,10 +23,10 @@ public partial class LampObject : Node2D
         }
     }
 
-    private void CollectLamp()
+    private async void CollectLamp()
     {
         _isTaken = true;
-        
+        await ToSignal(GetTree().CreateTimer(0.5f), "timeout");
         // Find Dimi and update his status
         var player = GetTree().GetFirstNodeInGroup("Player") as Player;
         if (player != null)
@@ -40,8 +40,8 @@ public partial class LampObject : Node2D
         var light = GetNodeOrNull<PointLight2D>("LampLight");
         if (light != null) light.Enabled = false;
 
-        // Optionally queue the object for deletion if you don't need it anymore
-        // QueueFree(); 
+        
+        QueueFree(); 
     }
 
     private void OnBodyEntered(Node2D body)

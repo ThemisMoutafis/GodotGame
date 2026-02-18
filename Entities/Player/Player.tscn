@@ -1,4 +1,4 @@
-[gd_scene load_steps=236 format=3 uid="uid://bwk6m2y1e5c8i"]
+[gd_scene load_steps=266 format=3 uid="uid://bwk6m2y1e5c8i"]
 
 [ext_resource type="Script" uid="uid://uhktpy1peuks" path="res://Entities/Player/Player.cs" id="1_ww0jn"]
 [ext_resource type="Texture2D" uid="uid://dvbg87ishnfa6" path="res://Assets/Player/Double Jump Hero Animation/double jump dimi_00000.png" id="2_elj48"]
@@ -208,6 +208,36 @@
 [ext_resource type="Texture2D" uid="uid://50yxo8v2sfip" path="res://Assets/Player/Dimi Hurt Animation/Dimi hurt_00011.png" id="111_2pg18"]
 [ext_resource type="Texture2D" uid="uid://dgo2j2l78ewtm" path="res://Assets/Player/Dimi Hurt Animation/Dimi hurt_00012.png" id="112_hine4"]
 [ext_resource type="Texture2D" uid="uid://kwps7oitle38" path="res://Assets/Player/Dimi Hurt Animation/Dimi hurt_00013.png" id="113_fdpam"]
+[ext_resource type="Texture2D" uid="uid://cv81hqvyfw3pc" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00000.png" id="139_5phu6"]
+[ext_resource type="Texture2D" uid="uid://r536wxd1a1av" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00001.png" id="140_d11bf"]
+[ext_resource type="Texture2D" uid="uid://c16j2klyw6we8" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00002.png" id="141_cufbt"]
+[ext_resource type="Texture2D" uid="uid://docg26wkg1ab0" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00003.png" id="142_kcrlx"]
+[ext_resource type="Texture2D" uid="uid://c3douef3gpp24" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00004.png" id="143_2x5p5"]
+[ext_resource type="Texture2D" uid="uid://d0wbs682yvsl8" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00005.png" id="144_bjtmr"]
+[ext_resource type="Texture2D" uid="uid://bhhp0brgugf0p" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00006.png" id="145_c7vym"]
+[ext_resource type="Texture2D" uid="uid://chq4i1a53lg5g" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00007.png" id="146_r2hqb"]
+[ext_resource type="Texture2D" uid="uid://cohssbg7qgm50" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00008.png" id="147_2c7do"]
+[ext_resource type="Texture2D" uid="uid://ct84rg6knmlue" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00009.png" id="148_b48yi"]
+[ext_resource type="Texture2D" uid="uid://cri0y1hmuwjsj" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00010.png" id="149_bc1vm"]
+[ext_resource type="Texture2D" uid="uid://c3t04t1if45ht" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00011.png" id="150_05ra3"]
+[ext_resource type="Texture2D" uid="uid://cra4rtkemyh4e" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00012.png" id="151_2sccx"]
+[ext_resource type="Texture2D" uid="uid://dpp1u48s78b04" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00013.png" id="152_soae3"]
+[ext_resource type="Texture2D" uid="uid://cyxktlxus1toc" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00014.png" id="153_43acb"]
+[ext_resource type="Texture2D" uid="uid://d0w4br0ijtwhx" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00015.png" id="154_c2fa1"]
+[ext_resource type="Texture2D" uid="uid://b4ecketoesm1x" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00016.png" id="155_j5v75"]
+[ext_resource type="Texture2D" uid="uid://eboc65wyjktl" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00017.png" id="156_5xggj"]
+[ext_resource type="Texture2D" uid="uid://fr480puaerjn" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00018.png" id="157_qbx6x"]
+[ext_resource type="Texture2D" uid="uid://by7pkf5baeffx" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00019.png" id="158_yjm0u"]
+[ext_resource type="Texture2D" uid="uid://bo3ni3bp77awj" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00020.png" id="159_jcia3"]
+[ext_resource type="Texture2D" uid="uid://bs066ggsj0753" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00021.png" id="160_x3yql"]
+[ext_resource type="Texture2D" uid="uid://dx6u1fjm1acw5" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00022.png" id="161_y15ih"]
+[ext_resource type="Texture2D" uid="uid://6sw8cowc2wxk" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00023.png" id="162_vk6xs"]
+[ext_resource type="Texture2D" uid="uid://ci5rxtpq5c4wt" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00024.png" id="163_7eg0o"]
+[ext_resource type="Texture2D" uid="uid://dgwbe1wpvvgnk" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00025.png" id="164_j0qox"]
+[ext_resource type="Texture2D" uid="uid://xxvhdmv0wmf0" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00026.png" id="165_trbnh"]
+[ext_resource type="Texture2D" uid="uid://bulq36a117xaa" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00027.png" id="166_f1mgs"]
+[ext_resource type="Texture2D" uid="uid://b12yaoptvm8iq" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00028.png" id="167_ugflr"]
+[ext_resource type="Texture2D" uid="uid://rlih2jf6ue" path="res://Assets/Player/Dimi Interact Animation/Dimi pick up_00029.png" id="168_dcjne"]
 [ext_resource type="Texture2D" uid="uid://2fvybnrgt03k" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00000.png" id="195_qnwhx"]
 [ext_resource type="Texture2D" uid="uid://s4dsdiyje4cu" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00001.png" id="196_wk7ol"]
 [ext_resource type="Texture2D" uid="uid://c0sbgiw6ywks6" path="res://Assets/Player/Sprint Hero Animation/dimi run fast_00002.png" id="197_4ylx2"]
@@ -685,6 +715,119 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("139_5phu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_d11bf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_cufbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_kcrlx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_2x5p5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_bjtmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_c7vym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_r2hqb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_2c7do")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_b48yi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("149_bc1vm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("150_05ra3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("151_2sccx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152_soae3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_43acb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154_c2fa1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155_j5v75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("156_5xggj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("157_qbx6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_yjm0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_jcia3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_x3yql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_y15ih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_vk6xs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_7eg0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_j0qox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_trbnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_f1mgs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_ugflr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_dcjne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_bjtmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_2x5p5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_kcrlx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_cufbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_d11bf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_5phu6")
+}],
+"loop": false,
+"name": &"Interact",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("39_b0pbf")
 }],
 "loop": false,
@@ -1018,7 +1161,9 @@ light_mask = 2
 position = Vector2(8, -1)
 scale = Vector2(0.11875927, 0.11962952)
 sprite_frames = SubResource("SpriteFrames_80tt4")
-animation = &"DoubleJump_Apex"
+animation = &"Interact"
+frame = 29
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 0)

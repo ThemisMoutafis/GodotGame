@@ -85,10 +85,10 @@ tile_map_data = PackedByteArray("AAALAP//AAACAAQAAAAKAP//AAABAAQAAAAJAP//AAABAAQ
 tile_set = SubResource("TileSet_671x1")
 
 [node name="Snitch Rat" parent="." instance=ExtResource("5_gkglm")]
-position = Vector2(182, -520)
+position = Vector2(171, -514)
 
 [node name="Snitch Rat2" parent="." instance=ExtResource("5_gkglm")]
-position = Vector2(616, -520)
+position = Vector2(606, -516)
 
 [node name="Snitch Rat3" parent="." instance=ExtResource("5_gkglm")]
 position = Vector2(1194, -710)

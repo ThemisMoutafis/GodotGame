@@ -133,8 +133,10 @@ public partial class SnitchRat : CharacterBody2D
     }
 
     // (Die, FacePlayer, FlipDirection, and PerformLounge remain exactly the same)
-    private void Die(Player dimi)
+   private void Die(Player dimi)
+
     {
+
         if (_isDead) return;
         _isDead = true;
         _timer.Stop();
@@ -143,8 +145,10 @@ public partial class SnitchRat : CharacterBody2D
         CollisionLayer = 0;
         CollisionMask = 0;
         _hitboxArea.Monitoring = false;
-        dimi.Velocity = new Vector2(dimi.Velocity.X, -400);
+        dimi.Velocity = new Vector2(dimi.Velocity.X, -600);
     }
+
+
 
     private void FacePlayer() {
         var dimi = GetTree().GetFirstNodeInGroup("Player") as Node2D;

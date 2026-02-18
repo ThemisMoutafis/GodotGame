@@ -779,7 +779,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjoeb"]
-size = Vector2(114, 77)
+size = Vector2(129, 77)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bv4fj"]
 size = Vector2(236, 22)
@@ -802,7 +802,7 @@ frame = 14
 frame_progress = 0.7357107
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 133.5)
+position = Vector2(-7.5, 133.5)
 shape = SubResource("RectangleShape2D_xjoeb")
 
 [node name="Hitbox" type="Area2D" parent="."]
