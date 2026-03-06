@@ -416,6 +416,8 @@ texture_region_size = Vector2i(64, 64)
 12:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 10.725006, 32, 10.725006, 32, 32, -32, 32)
 13:13/0 = 0
 14:13/0 = 0
+10:19/0 = 0
+11:19/0 = 0
 
 [resource]
 tile_size = Vector2i(64, 64)
