@@ -473,7 +473,7 @@ public partial class Player : CharacterBody2D
 
     public void PlayerInteract()
     {
-        if (_isInteracting || _isInteractLocked) return;
+        if (_isInteracting || _isInteractLocked || _isDead) return;
         _isInteracting = true;
         PlayerSprite.Play("Interact");
         // Interaction logic would go here (e.g., checking for nearby interactables)
