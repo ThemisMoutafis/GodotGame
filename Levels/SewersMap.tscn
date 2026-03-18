@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://f5606vihcqv"]
+[gd_scene load_steps=11 format=4 uid="uid://f5606vihcqv"]
 
 [ext_resource type="PackedScene" uid="uid://4negkirgouij" path="res://UI Elements/HUD.tscn" id="1_fqyxc"]
 [ext_resource type="TileSet" uid="uid://brgjf8b5lp2vb" path="res://Levels/Tileset/Sewers.tres" id="2_agbao"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://o7cfuu83ihab" path="res://Levels/Tileset/Asset 42.png" id="4_agbao"]
 [ext_resource type="PackedScene" uid="uid://cfg4ekc55d41v" path="res://Entities/Enemies/snitch_rat.tscn" id="5_gkglm"]
 [ext_resource type="PackedScene" uid="uid://bpm156117kjxa" path="res://Entities/Objects/lamp_object.tscn" id="6_671x1"]
+[ext_resource type="PackedScene" uid="uid://b0wi18315e4ti" path="res://slime_pits.tscn" id="7_h4i18"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gkglm"]
 texture = ExtResource("4_agbao")
@@ -105,6 +106,14 @@ position = Vector2(49, 493)
 [node name="LampObject" parent="." instance=ExtResource("6_671x1")]
 position = Vector2(903.00006, -605)
 
+[node name="SlimePits" parent="." instance=ExtResource("7_h4i18")]
+position = Vector2(214, 644)
+
+[node name="CollisionPolygon2D" parent="SlimePits" index="0"]
+position = Vector2(-0.082977295, 0.34602356)
+scale = Vector2(0.9986702, 0.9917636)
+polygon = PackedVector2Array(-3, -2, 177, 2, 182, 253, -6, 256)
+
 [node name="Hud" parent="." instance=ExtResource("1_fqyxc")]
 
 [node name="pillars" type="TileMapLayer" parent="."]
@@ -115,3 +124,5 @@ tile_set = SubResource("TileSet_671x1")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 process_priority = 1
 environment = SubResource("Environment_671x1")
+
+[editable path="SlimePits"]

@@ -69,6 +69,8 @@ public partial class Player : CharacterBody2D
     private bool _isInteracting = false;
     private bool _isInteractLocked = false;
 
+    public bool IsInSlime = false;
+
     private Label _debugLabel;   
     [Signal] public delegate void HealthChangedEventHandler(int newHealth);
 
@@ -91,7 +93,17 @@ public partial class Player : CharacterBody2D
         float currentGravity = GetGravity().Y;
 
         if (_isDead) { HandleDeathState(delta, currentGravity); return; }
-
+        // Constant tint logic
+    if (IsInSlime && !_isInvincible)
+    {
+        // A sickly muddy green tint (Darker than the damage flash)
+        PlayerSprite.Modulate = new Color(0.4f, 0.8f, 0.4f, 1.0f);
+    }
+    else if (!IsInSlime && !_isInvincible && !_isHurt)
+    {
+        // Reset to normal if not hurt or in slime
+        PlayerSprite.Modulate = new Color(1, 1, 1, 1);
+    }
         // --- 1. THE FLOOR CHECK (Strict Reset) ---
         if (IsOnFloor())
         {
@@ -417,6 +429,24 @@ public partial class Player : CharacterBody2D
         PlayerSprite.Modulate = new Color(1, 1, 1, 1);
     }
 
+   public async void TakeDamageOverTime(int amount)
+{
+    if (_isDead || _isInvincible) return;
+
+    _currentHealth -= amount;
+    EmitSignal(SignalName.HealthChanged, _currentHealth);
+
+    if (_currentHealth <= 0) { _currentHealth = 0; TriggerDeath(); return; }
+
+    // Damage Pulse: Bright Neon Green
+    PlayerSprite.Modulate = new Color(0.2f, 0.4f, 0.1f, 0.8f); 
+    _isInvincible = true;
+
+    await ToSignal(GetTree().CreateTimer(0.1f), "timeout");
+
+    _isInvincible = false;
+    // The _Process loop above will automatically catch the green tint again
+}
     private void ApplyHurtFlash()
     {
         Tween tween = GetTree().CreateTween();
