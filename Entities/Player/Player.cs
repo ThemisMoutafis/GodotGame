@@ -429,23 +429,46 @@ public partial class Player : CharacterBody2D
         PlayerSprite.Modulate = new Color(1, 1, 1, 1);
     }
 
-   public async void TakeDamageOverTime(int amount)
+   // 1. THE ENTRY HIT (Animation Lock + Flash)
+public async void TakeInitialSlimeHit(int amount)
+{
+    if (_isDead || _isInvincible) return;
+
+    // ... (Health logic) ...
+
+    _isHurt = true; 
+    _isInvincible = true;
+    PlayerSprite.Modulate = new Color(0.3f, 0.5f, 0.3f, 0.9f);
+    if (PlayerSprite.SpriteFrames.HasAnimation("Hurt")) 
+    {   
+        PlayerSprite.Play("Hurt");
+
+        
+        // Wait for the animation to reach the end (the 'stunned' pose)
+        await ToSignal(PlayerSprite, "animation_finished");
+        // THE STRETCH: Pause the sprite right here for 0.4 seconds
+        // This makes Dimi look "stuck" in the slime impact
+    }
+    else
+    {
+        await ToSignal(GetTree().CreateTimer(0.4f), "timeout");
+    }
+
+    _isHurt = false;
+    _isInvincible = false;
+}
+
+// 2. THE CONTINUOUS BURN (No Lock, just Health reduction)
+public void ApplySlimeBurn(int amount)
 {
     if (_isDead || _isInvincible) return;
 
     _currentHealth -= amount;
     EmitSignal(SignalName.HealthChanged, _currentHealth);
+    if (_currentHealth <= 0) { TriggerDeath(); return; }
 
-    if (_currentHealth <= 0) { _currentHealth = 0; TriggerDeath(); return; }
-
-    // Damage Pulse: Bright Neon Green
-    PlayerSprite.Modulate = new Color(0.2f, 0.4f, 0.1f, 0.8f); 
-    _isInvincible = true;
-
-    await ToSignal(GetTree().CreateTimer(0.1f), "timeout");
-
-    _isInvincible = false;
-    // The _Process loop above will automatically catch the green tint again
+    // No '_isHurt = true' here, so Dimi keeps walking normally.
+    // We can do a very quick visual flicker if you want feedback.
 }
     private void ApplyHurtFlash()
     {

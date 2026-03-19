@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8hhfr1t5n7b8"]
+[gd_scene load_steps=3 format=3 uid="uid://b8hhfr1t5n7b8"]
 
 [ext_resource type="Script" uid="uid://h5ecgoq6hvgb" path="res://UI Elements/StartMenu.cs" id="1_jwbto"]
+[ext_resource type="AudioStream" uid="uid://b7hrcc418lxkm" path="res://Assets/Sounds/We'll see.wav" id="2_pid3u"]
 
 [node name="start_menu" type="CanvasLayer"]
 script = ExtResource("1_jwbto")
@@ -35,3 +36,7 @@ theme_override_font_sizes/font_size = 48
 [node name="Exit" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_pid3u")
+autoplay = true

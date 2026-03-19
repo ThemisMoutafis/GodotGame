@@ -14,27 +14,31 @@ public partial class SlimePits : Area2D
     {
         _isDimiInside = true;
         _playerRef = player;
-        
-        // Tell Dimi he is now green
         _playerRef.IsInSlime = true;
+
+        // --- THE INITIAL SHOCK ---
+        // Trigger the animation and the "Hurt" lock ONLY ONCE here.
+        // You can use a small damage amount, e.g., 10.
+        _playerRef.TakeInitialSlimeHit(10); 
         
-        _playerRef.TakeDamageOverTime(5); 
+       
     }
 }
 
-    // 2. Continuous Burn
-   public override void _PhysicsProcess(double delta)
+public override void _PhysicsProcess(double delta)
+{
+    if (_isDimiInside && _playerRef != null)
     {
-        if (_isDimiInside && _playerRef != null)
+        _damageTimer += (float)delta;
+        if (_damageTimer >= _damageInterval)
         {
-            _damageTimer += (float)delta;
-            if (_damageTimer >= _damageInterval)
-            {
-                _playerRef.TakeDamageOverTime(5); 
-                _damageTimer = 0f;
-            }
+            // --- THE CONTINUOUS BURN ---
+            // This version does NOT set _isHurt = true, so no animation lock.
+            _playerRef.ApplySlimeBurn(5); 
+            _damageTimer = 0f;
         }
     }
+}
 
     private void _on_body_exited(Node2D body)
 {

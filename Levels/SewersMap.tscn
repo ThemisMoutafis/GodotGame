@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://f5606vihcqv"]
+[gd_scene load_steps=12 format=4 uid="uid://f5606vihcqv"]
 
 [ext_resource type="PackedScene" uid="uid://4negkirgouij" path="res://UI Elements/HUD.tscn" id="1_fqyxc"]
 [ext_resource type="TileSet" uid="uid://brgjf8b5lp2vb" path="res://Levels/Tileset/Sewers.tres" id="2_agbao"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cfg4ekc55d41v" path="res://Entities/Enemies/snitch_rat.tscn" id="5_gkglm"]
 [ext_resource type="PackedScene" uid="uid://bpm156117kjxa" path="res://Entities/Objects/lamp_object.tscn" id="6_671x1"]
 [ext_resource type="PackedScene" uid="uid://b0wi18315e4ti" path="res://slime_pits.tscn" id="7_h4i18"]
+[ext_resource type="AudioStream" uid="uid://dg66nttwn812o" path="res://Assets/Sounds/big door_ver3.wav" id="8_foqhw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gkglm"]
 texture = ExtResource("4_agbao")
@@ -104,20 +105,20 @@ position = Vector2(904, 559)
 position = Vector2(49, 493)
 
 [node name="LampObject" parent="." instance=ExtResource("6_671x1")]
-position = Vector2(903.00006, -605)
+position = Vector2(892.00006, -581)
 
 [node name="SlimePits" parent="." instance=ExtResource("7_h4i18")]
 position = Vector2(214, 644)
+
+[node name="CollisionPolygon2D" parent="SlimePits" index="0"]
+position = Vector2(7.6293945e-06, -2.0000248)
+scale = Vector2(0.9986702, 0.54760253)
+polygon = PackedVector2Array(-3.0039978, 23.739746, 187.24901, 20.087524, 189.25166, 257.48596, -6, 256)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="SlimePits"]
 position = Vector2(-634.8652, 1377.4808)
 scale = Vector2(3.644236, 1.8086683)
 polygon = PackedVector2Array(-3.0039978, 23.739746, 66.93852, 22.39708, 67.74127, -12.429565, 85.85206, -14.088257, 85.57765, 21.849854, 187.24901, 20.087524, 189.3031, 271.75745, -2.5066452, 271.75745)
-
-[node name="CollisionPolygon2D" parent="SlimePits" index="1"]
-position = Vector2(7.6293945e-06, -2.0000248)
-scale = Vector2(0.9986702, 0.54760253)
-polygon = PackedVector2Array(-3.0039978, 23.739746, 187.24901, 20.087524, 189.25166, 257.48596, -6, 256)
 
 [node name="Hud" parent="." instance=ExtResource("1_fqyxc")]
 
@@ -129,5 +130,9 @@ tile_set = SubResource("TileSet_671x1")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 process_priority = 1
 environment = SubResource("Environment_h4i18")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_foqhw")
+autoplay = true
 
 [editable path="SlimePits"]
