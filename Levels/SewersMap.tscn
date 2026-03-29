@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://f5606vihcqv"]
+[gd_scene load_steps=16 format=4 uid="uid://f5606vihcqv"]
 
 [ext_resource type="PackedScene" uid="uid://4negkirgouij" path="res://UI Elements/HUD.tscn" id="1_fqyxc"]
 [ext_resource type="TileSet" uid="uid://brgjf8b5lp2vb" path="res://Levels/Tileset/Sewers.tres" id="2_agbao"]
@@ -8,6 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://bpm156117kjxa" path="res://Entities/Objects/lamp_object.tscn" id="6_671x1"]
 [ext_resource type="PackedScene" uid="uid://b0wi18315e4ti" path="res://slime_pits.tscn" id="7_h4i18"]
 [ext_resource type="AudioStream" uid="uid://dg66nttwn812o" path="res://Assets/Sounds/big door_ver3.wav" id="8_foqhw"]
+[ext_resource type="Script" uid="uid://cu6madn04rdeq" path="res://Levels/AmbientManager.cs" id="9_y8ebd"]
+[ext_resource type="AudioStream" uid="uid://djnlbyi0i884y" path="res://Assets/Sounds/sound_garage-rat-squeaks-1-fx-396297.wav" id="10_1tfwa"]
+[ext_resource type="AudioStream" uid="uid://bphfkguuqhk0j" path="res://Assets/Sounds/soul_serenity_sounds-random-water-drop-ripple-241044.wav" id="11_8pdaa"]
+[ext_resource type="AudioStream" uid="uid://ch3kadepqbhp0" path="res://Assets/Sounds/freesound_community-water-drops-6223.mp3.wav" id="12_rkcik"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gkglm"]
 texture = ExtResource("4_agbao")
@@ -134,5 +138,13 @@ environment = SubResource("Environment_h4i18")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_foqhw")
 autoplay = true
+
+[node name="AmbientManager" type="Node2D" parent="."]
+script = ExtResource("9_y8ebd")
+AmbientSounds = Array[AudioStream]([ExtResource("10_1tfwa"), ExtResource("11_8pdaa"), ExtResource("12_rkcik")])
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AmbientManager"]
+
+[node name="Timer" type="Timer" parent="AmbientManager"]
 
 [editable path="SlimePits"]

@@ -69,6 +69,9 @@ public partial class Player : CharacterBody2D
     private bool _isInteracting = false;
     private bool _isInteractLocked = false;
 
+    private AudioStreamPlayer2D _footstepSound;
+    private float _stepTimer = 0.0f;
+    private float _stepInterval = 0.35f;
     public bool IsInSlime = false;
 
     private Label _debugLabel;   
@@ -76,6 +79,7 @@ public partial class Player : CharacterBody2D
 
     public override void _Ready()
     {   
+        _footstepSound = GetNode<AudioStreamPlayer2D>("FootstepSound");
         AddToGroup("Player");
         _debugLabel = GetNodeOrNull<Label>("%DebugStateLabel");
         _currentHealth = MaxHealth;
@@ -174,6 +178,7 @@ public partial class Player : CharacterBody2D
         
         _previousYVelocity = velocity.Y; 
         Velocity = velocity;
+        HandleFootstepLogic((float)delta, velocity);
         MoveAndSlide();
         
         // Final Sync for next frame and Bounce Check
@@ -218,6 +223,8 @@ public partial class Player : CharacterBody2D
         }
 
         HandleLampLight();
+
+       
     }
 
 
@@ -526,5 +533,46 @@ public void ApplySlimeBurn(int amount)
         // The light's enabled state should ALWAYS match the boolean
         lamp.Enabled = HasLamp;
     }
+}
+
+private float _baseStepInterval = 0.35f; // Time between steps at walk speed (300)
+private float _walkSpeed = 300f;
+
+private void HandleFootstepLogic(float delta, Vector2 velocity)
+{
+    float currentHorizontalSpeed = Mathf.Abs(velocity.X);
+
+    // Only process if on floor and moving significantly
+    if (IsOnFloor() && currentHorizontalSpeed > 20.0f && !_isInteracting && !_isHurt && !_isDead)
+    {
+        // Calculate how much faster the steps should be
+        // If speed is 650, interval becomes ~0.16s
+        float speedFactor = _walkSpeed / currentHorizontalSpeed;
+        float dynamicInterval = _baseStepInterval * speedFactor;
+
+        _stepTimer += delta;
+
+        if (_stepTimer >= dynamicInterval)
+        {
+            PlayFootstep();
+            _stepTimer = 0.0f;
+        }
+    }
+    else
+    {
+        if (_footstepSound.Playing) _footstepSound.Stop();
+        _stepTimer = _baseStepInterval; 
+    }
+}
+
+private void PlayFootstep()
+{
+    _footstepSound.Stop();
+    _footstepSound.PitchScale = (float)GD.RandRange(0.65, 1.35);
+    
+    // Adjusted volume range to be quieter as requested
+    _footstepSound.VolumeDb = (float)GD.RandRange(-3.0, -6.0);
+    
+    _footstepSound.Play();
 }
 }
