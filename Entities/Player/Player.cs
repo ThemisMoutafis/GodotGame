@@ -70,6 +70,8 @@ public partial class Player : CharacterBody2D
     private bool _isInteractLocked = false;
 
     private AudioStreamPlayer2D _footstepSound;
+
+    private AudioStreamPlayer2D _hurtSound;
     private float _stepTimer = 0.0f;
     private float _stepInterval = 0.35f;
     public bool IsInSlime = false;
@@ -80,6 +82,7 @@ public partial class Player : CharacterBody2D
     public override void _Ready()
     {   
         _footstepSound = GetNode<AudioStreamPlayer2D>("FootstepSound");
+        _hurtSound = GetNode<AudioStreamPlayer2D>("HurtSound");
         AddToGroup("Player");
         _debugLabel = GetNodeOrNull<Label>("%DebugStateLabel");
         _currentHealth = MaxHealth;
@@ -416,6 +419,7 @@ public partial class Player : CharacterBody2D
         if (_isDead || _isInvincible) return;
         _currentHealth -= amount;
         EmitSignal(SignalName.HealthChanged, _currentHealth);
+        PlayHurtSound();
         _isInvincible = true;
         if (_currentHealth <= 0) { _currentHealth = 0; TriggerDeath(); return; }
         
@@ -574,5 +578,13 @@ private void PlayFootstep()
     _footstepSound.VolumeDb = (float)GD.RandRange(-3.0, -6.0);
     
     _footstepSound.Play();
+}
+
+private void PlayHurtSound()
+{
+    _hurtSound.Stop();
+    _hurtSound.PitchScale = (float)GD.RandRange(0.8, 1.2);
+    _hurtSound.VolumeDb = (float)GD.RandRange(-2.0, -5.0);
+    _hurtSound.Play();
 }
 }

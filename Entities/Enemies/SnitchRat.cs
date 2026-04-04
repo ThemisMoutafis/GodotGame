@@ -27,13 +27,15 @@ public partial class SnitchRat : CharacterBody2D
     private int _direction = -1; 
     private float _flipCooldown = 0.0f;
 
+    private AudioStreamPlayer2D _deathSound; 
     public override void _Ready()
     {
         _startPosition = GlobalPosition;
         _sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         _hitboxShape = GetNode<CollisionShape2D>("Hitbox/CollisionShape2D");
         _hitboxArea = GetNode<Area2D>("Hitbox");
-        
+        _deathSound = GetNode<AudioStreamPlayer2D>("RatDeathSound");
+
         _hitboxArea.Monitoring = false;
 
         _timer = new Timer();
@@ -142,6 +144,7 @@ public partial class SnitchRat : CharacterBody2D
         _timer.Stop();
         _sprite.Stop();
         _sprite.Play("DeathRat");
+        PlayHurtSound();
         CollisionLayer = 0;
         CollisionMask = 0;
         _hitboxArea.Monitoring = false;
@@ -191,4 +194,12 @@ public partial class SnitchRat : CharacterBody2D
         _isAttacking = false;
         if (_playerInRange && !_isDead) _timer.Start(GD.RandRange(MinDelay, MaxDelay));
     }
+
+    private void PlayHurtSound()
+{
+    _deathSound.Stop();
+    _deathSound.PitchScale = (float)GD.RandRange(0.8, 1.2);
+    _deathSound.VolumeDb = (float)GD.RandRange(-2.0, -5.0);
+    _deathSound.Play();
+}
 }
